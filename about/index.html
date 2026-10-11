@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于本站、评测准则与联系方式 (/about/) | 梯子指南</title>
+  <meta name="description" content="梯子指南 博客定位与初衷说明：自费购入体验、每日连通率探针监测、流媒体/高峰延迟打分标准与官方联系渠道。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <div class="container header-row">
+      <a href="../index.html" class="site-brand"><span class="brand-glyph">◈</span><span>梯子指南</span></a>
+      <nav class="site-nav">
+        <a href="../index.html#recommended" class="nav-link">推荐机场</a>
+        <a href="../ai-tools/index.html" class="nav-link">AI 软件</a>
+        <a href="../kb/index.html" class="nav-link">知识库</a>
+        <a href="../posts/index.html" class="nav-link">科普文章</a>
+        <a href="../faq/index.html" class="nav-link">机场 FAQ</a>
+        <a href="../coupons/index.html" class="nav-link">机场优惠券</a>
+        <a href="index.html" class="nav-link active">关于我们</a>
+      </nav>
+      <div class="header-status-box"><span class="patina-dot"></span><span>实验室准则</span></div>
+    </div>
+  </header>
+
+  <main class="site-section">
+    <div class="container" style="max-width:880px;">
+      
+      <div class="section-title-wrap">
+        <div>
+          <h1 class="section-title" style="font-size:1.8rem;">关于 梯子指南 测速实验室与评测标准</h1>
+          <p class="section-subtext">坚持客观自费体验 · 每日连通率监测 · 严谨科学打分体系</p>
+        </div>
+      </div>
+
+      <article class="content-body" style="margin-top:28px;">
+        
+        <h2>一、 博客初衷与定位</h2>
+        <p>
+          <strong>梯子指南 (跨境网络基建性能基准实验室)</strong> 创立于 2024 年。在这个充斥着“跑路云洗白”、“虚假千兆评测”与信息黑盒的代理服务市场，我们致力于建立一套<strong>公开、可复现、独立第三方</strong>的网络性能监测基准。
+        </p>
+        <p>
+          本站所有评测样本均由团队自费真实购入，绝不接受“付费修改评测数据”的商业要约。我们相信，只有基于晚高峰 21:00 真实物理骨干网探针采样的硬核数据，才能真正帮助出海工程师、跨境电商团队和影音爱好者避坑。
+        </p>
+
+        <h2 id="standard">二、 核心评测维度打分说明 (1-5星打分机制)</h2>
+        <div class="data-table-container" style="margin:20px 0;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>评测指标</th>
+                <th>权重比例</th>
+                <th>测试方法与判定标准</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>高峰期延迟与丢包</strong></td>
+                <td>40%</td>
+                <td>三大运营商晚 20:30~22:30 连续发送 1000 个探测包，丢包率 &lt; 0.1% 为满分。</td>
+              </tr>
+              <tr>
+                <td><strong>流媒体与 AI 解锁</strong></td>
+                <td>25%</td>
+                <td>每日通过原生脚本验证 Netflix 4K 全区、Disney+ 与 OpenAI 住宅出口纯净度。</td>
+              </tr>
+              <tr>
+                <td><strong>工单与客服时效</strong></td>
+                <td>15%</td>
+                <td>随机在晚间拥堵期发起工单提问，响应时间在 15 分钟以内判定为优。</td>
+              </tr>
+              <tr>
+                <td><strong>架构抗风险冗余</strong></td>
+                <td>20%</td>
+                <td>考察是否具备多线 BGP 自动容灾倒换，是否存在超卖虚标与失联风险。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="contact">三、 官方联系渠道与节点提交</h2>
+        <p>
+          欢迎优质线路运营团队申请加入自动化监控探针池，或读者提交问题反馈：
+        </p>
+        <ul>
+          <li><strong>官方邮箱：</strong> <code>benchmark@netlabs-review.org</code></li>
+        </ul>
+
+        <h2 id="affiliate">四、 推广（Affiliate）声明与伦理边界</h2>
+        <p>
+          为了覆盖我们在广州、上海、北京自建探针服务器的月度硬件开支，本站部分出站链接包含推广代码。
+        </p>
+        <blockquote>
+          🛡️ <strong>我们的自律准则：</strong><br>
+          1. 佣金比例绝不影响最终排名打分；<br>
+          2. 若某家专线出现长期大面积断流或疑似跑路，我们将第一时间下架并发布警示通报。
+        </blockquote>
+
+        <h2 id="disclaimer">五、 免责声明</h2>
+        <p>
+          本站刊载的所有技术文章与评测数据仅供网络性能技术交流、学术研究与外贸跨境合规业务参考。严禁任何组织或个人将相关工具用于违法违规用途。
+        </p>
+        <p style="margin-top:20px;">
+          阅读本站完整的隐私政策与 Cookie 规定，请访问：<a href="../privacy/index.html" style="color:var(--accent-verdigris); text-decoration:underline;">《法律与隐私条款 (/privacy/)》</a>。
+        </p>
+
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>© 2026 梯子指南. 独立第三方网络评测博客.</div>
+      <a href="../index.html#recommended" style="color:var(--accent-verdigris);">返回首页精选机场 →</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

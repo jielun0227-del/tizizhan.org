@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mac机场客户端全解析：Clash Verge / Mihomo Party 规则分流与 DNS 泄露解决 | 梯子指南</title>
+  <meta name="description" content="Mac机场客户端配置指南：深入对比 Clash Verge Rev 与 Mihomo Party，解决 macOS 系统下 DNS 污染泄露、TUN 模式虚拟网卡配置与 M系列芯片功耗优化。">
+  <meta name="keywords" content="Mac机场, Mac翻墙, Clash Verge Mac, Mihomo Party, macOS代理工具">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <div class="container header-row">
+      <a href="../index.html" class="site-brand"><span class="brand-glyph">◈</span><span>梯子指南</span></a>
+      <nav class="site-nav">
+        <a href="../index.html#recommended" class="nav-link">推荐机场</a>
+        <a href="index.html" class="nav-link active">知识库</a>
+        <a href="../posts/index.html" class="nav-link">科普文章</a>
+        <a href="../faq/index.html" class="nav-link">机场 FAQ</a>
+        <a href="../coupons/index.html" class="nav-link">机场优惠券</a>
+        <a href="../about/index.html" class="nav-link">关于我们</a>
+      </nav>
+      <div class="header-status-box"><span class="patina-dot"></span><span>Mac 知识库</span></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="article-two-cols">
+      
+      <aside class="toc-aside">
+        <div class="toc-title">目录导航 // TOC</div>
+        <ul class="toc-list">
+          <li><a href="#mac-selection">一、 macOS 两大主流客户端对比</a></li>
+          <li><a href="#install-mac">二、 Apple Silicon 原生安装</a></li>
+          <li><a href="#dns-leak">三、 macOS 常见的 DNS 泄露痛点</a></li>
+          <li><a href="#tun-mac">四、 TUN 虚拟网卡与开发环境支持</a></li>
+          <li><a href="#rule-sets">五、 智能分流策略与规则集</a></li>
+          <li><a href="#mac-faq">六、 权限授权与报错排查</a></li>
+        </ul>
+      </aside>
+
+      <article class="content-body">
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-patina); margin-bottom:12px;">
+          <a href="../index.html">HOME</a> / <a href="index.html">KB</a> / <span>MAC-CLASH-TUTORIAL</span>
+        </div>
+        <h1>Mac机场客户端全解析：Clash Verge / Mihomo Party 规则分流与 DNS 泄露解决</h1>
+        <div style="display:flex; gap:16px; font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim); margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid var(--border-patina);">
+          <span>DATE: 2026-10-11</span>
+          <span>TAG: #Mac机场</span>
+          <span>WORD COUNT: 约 1,320 字</span>
+        </div>
+
+        <h2 id="mac-selection">一、 macOS 平台客户端两大标杆：Clash Verge Rev vs Mihomo Party</h2>
+        <p>
+          在 Apple Mac 生态中，自 ClashX 停止维护后，开发者群体与普通用户主要转向了两个现代继承者：
+        </p>
+        <ul>
+          <li><strong>Clash Verge Rev (Mac版)：</strong> 基于 Rust + Tauri 深度优化，内存占用低至 40MB，UI 简洁利落，对 macOS 系统的深色模式适配极佳；</li>
+          <li><strong>Mihomo Party：</strong> 功能极度强大的规则可视化面板，适合需要深度调优策略组与脚本注入的资深网络玩家。</li>
+        </ul>
+        <p>
+          两者底层均搭载了 <strong>Mihomo (Clash.Meta) 内核</strong>，支持完全相同的现代订阅格式与协议栈。对于绝大部分日常办公与科研人群，Clash Verge Rev 更加轻快流畅。
+        </p>
+
+        <h2 id="install-mac">二、 Apple Silicon (M1/M2/M3/M4) 原生架构安装与签名避坑</h2>
+        <p>
+          在 GitHub Releases 页面下载安装包时，务必根据处理器架构下载：
+        </p>
+        <ol>
+          <li>搭载 Apple 芯片（M系列）的 Mac，请下载带有 <code>_aarch64.dmg</code> 的原生安装包；</li>
+          <li>如果是较老的 Intel 处理器 Mac，请下载 <code>_x64.dmg</code>；</li>
+          <li><strong>“无法打开，因为无法验证开发者”报错解决：</strong> 打开 macOS“系统设置-隐私与安全性”，滑到页面下方，在“安全性”中点击<strong>“仍要打开”</strong>并输入 Mac 开机密码即可解除 Gatekeeper 拦截。</li>
+        </ol>
+
+        <!-- Internal Recommendation Slot -->
+        <div class="internal-recommend-slot">
+          <div class="slot-text-group">
+            <div class="slot-heading">💡 Mac 终端代码拉取慢或 Homebrew 卡死？</div>
+            <div class="slot-desc">普通公网节点在终端大流量并发下极易触发超时。推荐使用丢包率极低的 IPLC/IEPL 企业级专线。</div>
+          </div>
+          <a href="../index.html#recommended" class="btn-ancient btn-primary-bronze" style="white-space:nowrap;">
+            查看本站精选稳定专线机场推荐 →
+          </a>
+        </div>
+
+        <h2 id="dns-leak">三、 彻底解决 macOS 系统的 DNS 泄露痛点</h2>
+        <p>
+          macOS 系统具备复杂的 mDNSResponder 缓存与多网络接口解析机制。很多用户在浏览器中查询 <code>dnsleaktest.com</code> 时，发现依然暴露了中国电信或联通的本地 DNS，导致访问部分学术网站或海外金融业务时遭遇地域拦截。
+        </p>
+        <p>
+          <strong>根治方案：配置 Fake-IP 模式</strong><br>
+          在 Clash Verge Rev 的配置中，确保开启了 Fake-IP 增强模式。在该模式下，当 Mac 系统发出域名查询时，Clash 会立即返回一个保留私网 IP（如 198.18.0.x），真实的 DNS 解析则由远端香港或日本的高速代理节点完成，从而实现 100% 杜绝本地 DNS 泄露与域名投毒。
+        </p>
+
+        <h2 id="tun-mac">四、 TUN 虚拟网卡与开发环境支持</h2>
+        <p>
+          macOS 工程师在终端使用 <code>curl</code>、<code>git clone</code>、<code>docker pull</code> 时，默认不读取系统的 HTTP Proxy 环境变量。
+        </p>
+        <p>
+          开启 Clash 的 <strong>TUN 模式</strong>：
+        </p>
+        <ol>
+          <li>进入应用“设置”，安装辅助守护进程（Helper Tool）；</li>
+          <li>开启“TUN 模式”，并在弹窗中允许系统创建虚拟网卡；</li>
+          <li>此时系统网络层将创建名为 <code>utun</code> 的虚拟设备，所有终端应用、SSH 远程连接及 Xcode 均会自动无缝享受加速。</li>
+        </ol>
+
+        <h2 id="rule-sets">五、 智能分流策略与规则集</h2>
+        <p>
+          建议在代理界面保持“规则 (Rule)”模式，日常绑定以下核心策略：
+        </p>
+        <ul>
+          <li><strong>AI 服务 (OpenAI, Claude)：</strong> 绑定至美国或日本的原生住宅 IP 节点；</li>
+          <li><strong>国内白名单 (Apple, 国内直连)：</strong> 绑定 <code>DIRECT</code> 走本地千兆宽带；</li>
+          <li><strong>默认流媒体 (YouTube, Netflix)：</strong> 绑定香港或新加坡高速专线，畅享 4K HDR 视频秒开。</li>
+        </ul>
+
+        <h2 id="mac-faq">六、 权限授权与报错排查</h2>
+        <p>
+          <strong>1. 退出软件后 Mac 无法上网？</strong><br>
+          如果软件意外崩溃，macOS 的系统网络设置中可能残留了 127.0.0.1 的 HTTP 代理勾选。进入“系统设置-网络-Wi-Fi-详细信息-代理”，取消勾选“网页代理 (HTTP)”与“安全网页代理 (HTTPS)”即可立即恢复。
+        </p>
+      </article>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>© 2026 梯子指南. macOS 客户端架构调优.</div>
+      <a href="../index.html#recommended" style="color:var(--accent-verdigris);">精选高速专线推荐 →</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

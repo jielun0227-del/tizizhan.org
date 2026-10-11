@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>机场选购与常见避坑 FAQ (权威释疑) | 梯子指南</title>
+  <meta name="description" content="梯子指南 机场选购高频疑问权威解答：专线与直连区别、购买后连不上排查、优惠码使用、退款政策、流媒体与原生IP解锁、晚高峰卡顿根因。集成 FAQPage Schema 结构化数据。">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- Google FAQPage Schema for Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "什么是专线？和普通直连有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "专线是指跨国内网点对点物理光纤（IPLC/IEPL），数据完全不经过公网国际互联网网关，因此根本不经过 GFW 审查。而普通直连走公共骨干网，晚高峰时期面临严重的运营商 QoS 限速与高达 20%~40% 的丢包。专线晚高峰丢包稳定低于 0.1%，是彻底告别断流的物理层解决方案。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "买了机场为什么连不上？如何自检排查？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "首先检查电脑或手机的系统时间是否精准到“自动设置”，时间偏差超过 90 秒会导致 TLS 安全握手彻底失败；其次检查客户端是否误设为全局直连模式；最后确认订阅链接是否由于到期或被墙而拉取失败。详见本站知识库故障排查指南。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "机场优惠码如何使用？在哪里输入？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "在机场官网选择好套餐进入结算订单页面后，找到“折价券 / 优惠码 (Coupon Code)”输入框，粘贴从本站优惠券频道复制的代码，点击验证即可实时抵扣总价。注意核对适用周期（部分仅限半年付或年付）。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "机场支持退款吗？退款政策通常如何？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "正规优质专线机场通常提供 24 小时至 48 小时无理由退款保障（扣除已消耗流量的极少手续费）。而超卖严重或存在跑路风险的低端机场通常标注“一经售出概不退款”。我们强烈建议新手初次选购务必坚持月付测试。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "为什么同一个机场，看网页飞快但打不开 ChatGPT？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "因为 OpenAI 官方目前不支持中国香港地区的 IP，且对普通机房商业 IP 实施了批量封锁。访问 ChatGPT 必须在客户端规则中将流量分流至美国或日本的原生住宅 IP 节点。"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <div class="container header-row">
+      <a href="../index.html" class="site-brand"><span class="brand-glyph">◈</span><span>梯子指南</span></a>
+      <nav class="site-nav">
+        <a href="../index.html#recommended" class="nav-link">推荐机场</a>
+        <a href="../ai-tools/index.html" class="nav-link">AI 软件</a>
+        <a href="../kb/index.html" class="nav-link">知识库</a>
+        <a href="../posts/index.html" class="nav-link">科普文章</a>
+        <a href="index.html" class="nav-link active">机场 FAQ</a>
+        <a href="../coupons/index.html" class="nav-link">机场优惠券</a>
+        <a href="../about/index.html" class="nav-link">关于我们</a>
+      </nav>
+      <div class="header-status-box"><span class="patina-dot"></span><span>FAQPage Schema 校验</span></div>
+    </div>
+  </header>
+
+  <main class="site-section">
+    <div class="container" style="max-width:880px;">
+      
+      <div class="section-title-wrap">
+        <div>
+          <h1 class="section-title" style="font-size:1.8rem;">机场选购与常见避坑 FAQ</h1>
+          <p class="section-subtext">高频新手疑问折叠答疑 · 移动端自适应阅读 · 集成内链导流</p>
+        </div>
+      </div>
+
+      <!-- Accordion List -->
+      <div class="faq-accordion-list" style="margin-top:28px;">
+        
+        <!-- FAQ 1 -->
+        <details class="faq-antique-item" open>
+          <summary class="faq-antique-question">
+            <span>什么是专线？和普通直连有什么区别？</span>
+            <span style="font-family:var(--font-mono); color:var(--accent-verdigris);">▼</span>
+          </summary>
+          <div class="faq-antique-answer">
+            <p>
+              <strong>专线 (IPLC/IEPL) 是跨国内网点对点物理光纤通道</strong>，数据传输全程运行在运营商内部专有线路上，根本不经过公网国际互联网网关，因此在物理层面上<strong>根本碰不到 GFW 的任何审查与封锁</strong>。
+            </p>
+            <p>
+              相比之下，普通公网直连（如廉价 VPS）在每晚 20:00~23:00 晚高峰面临骨干网严重的 QoS 限速与高达 20%~40% 的丢包重传。想深入了解两者底层物理架构，请参阅本站深度长文：<a href="../posts/iplc-vs-iepl-explained.html" style="color:var(--accent-verdigris); text-decoration:underline;">《IPLC 与 IEPL 专线架构原理解析》</a>。
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="faq-antique-item" open>
+          <summary class="faq-antique-question">
+            <span>买了机场为什么连不上？如何快速自检排查？</span>
+            <span style="font-family:var(--font-mono); color:var(--accent-verdigris);">▼</span>
+          </summary>
+          <div class="faq-antique-answer">
+            <p>
+              购买订阅后连不上的 3 大高频核心原因：<br>
+              1. <strong>系统时间未同步：</strong> 电脑或手机时间如果与北京标准时间偏差超过 90 秒，TLS 加密握手会全部失败。请在系统设置中开启“自动设置时间”；<br>
+              2. <strong>模式误开为直连：</strong> 检查客户端是否误设为了“直连 (Direct)”；<br>
+              3. <strong>本地防火墙或端口冲突：</strong> 检查是否运行了其他代理工具导致 7890 端口被占用。详细排错步骤可查看本站知识库：<a href="../kb/windows-accelerator.html" style="color:var(--accent-verdigris); text-decoration:underline;">《Windows 加速器排错指南》</a> 与 <a href="../kb/ios-shadowrocket.html" style="color:var(--accent-verdigris); text-decoration:underline;">《小火箭连接超时排错》</a>。
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="faq-antique-item">
+          <summary class="faq-antique-question">
+            <span>优惠码如何使用？在哪里输入抵扣？</span>
+            <span style="font-family:var(--font-mono); color:var(--accent-verdigris);">▼</span>
+          </summary>
+          <div class="faq-antique-answer">
+            <p>
+              在机场官网选定套餐后，进入购物车结算页面，页面中会提供“折价券 / 优惠码”输入框。将从本站 <a href="../coupons/index.html" style="color:var(--accent-verdigris); text-decoration:underline;">机场专属优惠券频道 (/coupons/)</a> 复制的独家折扣码粘贴进去，点击“应用”即可立享折上折。
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="faq-antique-item">
+          <summary class="faq-antique-question">
+            <span>买月付还是买年付？如何防范跑路风险？</span>
+            <span style="font-family:var(--font-mono); color:var(--accent-verdigris);">▼</span>
+          </summary>
+          <div class="faq-antique-answer">
+            <p>
+              <strong>强烈准则：新接触的机场坚持月付或季付！</strong> 无论商家打折力度有多大（如 30 元包年 1000G/月），除非是运营 4~5 年以上的顶级老牌，否则任何中小机场都面临上游拔线或恶意圈钱风险。通过月付可以将损失控制在最低限度。
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details class="faq-antique-item">
+          <summary class="faq-antique-question">
+            <span>什么是住宅原生 IP？为什么看 Netflix 和玩 TikTok 必须用它？</span>
+            <span style="font-family:var(--font-mono); color:var(--accent-verdigris);">▼</span>
+          </summary>
+          <div class="faq-antique-answer">
+            <p>
+              住宅原生 IP（Residential ISP IP）是当地真实宽带运营商分配给家庭用户的 IP 地址。流媒体版权商（Netflix, Disney+）与社媒（TikTok）对机房商用 IP 实施了批量拉黑。使用住宅原生 IP 不会触发人机验证，并能解锁 Netflix 4K 全区非自制剧。详见：<a href="../posts/netflix-disney-unlock.html" style="color:var(--accent-verdigris); text-decoration:underline;">《Netflix 与 TikTok 解锁指南》</a>。
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 6 -->
+        <details class="faq-antique-item">
+          <summary class="faq-antique-question">
+            <span>为什么同一个机场，看网页飞快但打开 ChatGPT 提示 Access Denied？</span>
+            <span style="font-family:var(--font-mono); color:var(--accent-verdigris);">▼</span>
+          </summary>
+          <div class="faq-antique-answer">
+            <p>
+              因为 OpenAI 目前对中国香港地区的 IP 实施了严格地域封锁。如果你使用的是香港节点，必然会被拦截。请在客户端策略组中将规则分流切换至美国（US）或日本（JP）节点。详见长文：<a href="../posts/chatgpt-claude-accelerator.html" style="color:var(--accent-verdigris); text-decoration:underline;">《ChatGPT加速器与 Claude 专用节点调优》</a>。
+            </p>
+          </div>
+        </details>
+
+      </div>
+
+      <!-- Internal CTA Slot -->
+      <div class="internal-recommend-slot" style="margin-top:40px;">
+        <div class="slot-text-group">
+          <div class="slot-heading">还在纠结选择哪一家专线？</div>
+          <div class="slot-desc">参考我们基于三大运营商晚高峰性能监测搭建的 16 款上榜专线横评：</div>
+        </div>
+        <a href="../index.html#recommended" class="btn-ancient btn-primary-bronze" style="white-space:nowrap;">
+          查看 2026 核心推荐机场榜单 →
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>© 2026 梯子指南. FAQPage Schema 结构化数据标准支持.</div>
+      <a href="../index.html#recommended" style="color:var(--accent-verdigris);">精选稳定专线推荐 →</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

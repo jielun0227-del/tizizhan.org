@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V2RayNG 零基础配置全解：协议手动添加与订阅更新报错排查 | 梯子指南</title>
+  <meta name="description" content="Android 经典代理工具 V2RayNG 基础教程：从订阅地址一键拉取、VLESS/Trojan 协议手动添加、分流绕过大陆到常见订阅更新失败排错指南。">
+  <meta name="keywords" content="V2RayNG教程, 安卓科学上网, V2RayNG配置, 订阅更新失败, VLESS协议">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <div class="container header-row">
+      <a href="../index.html" class="site-brand"><span class="brand-glyph">◈</span><span>梯子指南</span></a>
+      <nav class="site-nav">
+        <a href="../index.html#recommended" class="nav-link">推荐机场</a>
+        <a href="index.html" class="nav-link active">知识库</a>
+        <a href="../posts/index.html" class="nav-link">科普文章</a>
+        <a href="../faq/index.html" class="nav-link">机场 FAQ</a>
+        <a href="../coupons/index.html" class="nav-link">机场优惠券</a>
+        <a href="../about/index.html" class="nav-link">关于我们</a>
+      </nav>
+      <div class="header-status-box"><span class="patina-dot"></span><span>知识库</span></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="article-two-cols">
+      
+      <aside class="toc-aside">
+        <div class="toc-title">目录导航 // TOC</div>
+        <ul class="toc-list">
+          <li><a href="#v2rayng-intro">一、 V2RayNG 的核心优势与适用场景</a></li>
+          <li><a href="#install-setup">二、 客户端下载与系统权限初始化</a></li>
+          <li><a href="#sub-import">三、 订阅链接导入与自动化更新</a></li>
+          <li><a href="#routing-modes">四、 路由分流模式调优（绕过大陆）</a></li>
+          <li><a href="#troubleshoot">五、 订阅拉取失败与连通报错实操排错</a></li>
+        </ul>
+      </aside>
+
+      <article class="content-body">
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-patina); margin-bottom:12px;">
+          <a href="../index.html">HOME</a> / <a href="index.html">KB</a> / <span>V2RAYNG-TUTORIAL</span>
+        </div>
+        <h1>V2RayNG 零基础配置全解：协议手动添加与订阅更新报错排查</h1>
+        <div style="display:flex; gap:16px; font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim); margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid var(--border-patina);">
+          <span>DATE: 2026-10-11</span>
+          <span>TAG: #安卓客户端 #V2RayNG教程</span>
+          <span>WORD COUNT: 约 1,160 字</span>
+        </div>
+
+        <p>
+          在 Android 科学上网工具阵营中，<strong>v2rayNG</strong> 凭借极简纯粹的单核架构、低运存占用以及对 Xray / V2Ray 协议集的原生高兼容度，成为了国内数十万安卓用户的常青树工具。相比规则复杂的 Clash 类客户端，v2rayNG 上手更快、耗电更低。本文从新手视角出发，完整拆解其下载、订阅导入、路由配置与报错排查流程。
+        </p>
+
+        <h2 id="v2rayng-intro">一、 V2RayNG 的核心优势与适用场景</h2>
+        <ul>
+          <li><strong>协议原生高兼容：</strong> 原生完美支持 Shadowsocks、VMess、VLESS（XTLS / Reality）、Trojan 等主流网络穿透协议。</li>
+          <li><strong>资源开销极其轻量：</strong> 后台运行仅占用 30MB 左右运存，在低配千元机或车载车机上也能长期稳定保活。</li>
+          <li><strong>测试功能直观：</strong> 支持一键真连接延时测试（Ping ICMP 与实际 TCP Handshake 测速），一眼揪出失效节点。</li>
+        </ul>
+
+        <h2 id="install-setup">二、 客户端下载与系统权限初始化</h2>
+        <p>
+          由于 Google Play 商店受限于地区限制，建议从官方 GitHub Releases 开源仓库下载正版 APK 安装包：
+        </p>
+        <ol>
+          <li>访问官方开源主页，下载通用架构安装包（如 <code>v2rayNG_1.x.x_arm64-v8a.apk</code>）。</li>
+          <li>安装后首次启动，系统会弹出<strong>“建立 VPN 连接请求”</strong>提示，必须点击“始终允许”以授权建立本地虚拟网卡。</li>
+          <li><strong>关闭系统激进省电策略：</strong> 针对小米 MIUI/澎湃OS、华为鸿蒙或 OPPO 系统，在系统设置中将 v2rayNG 的“省电策略”改为<strong>“无限制”</strong>，并允许后台自启动，避免切到后台数分钟后被杀进程断网。</li>
+        </ol>
+
+        <h2 id="sub-import">三、 订阅链接导入与自动化更新</h2>
+        <p>
+          最便捷的添加节点方式是通过机场订阅链接完成批量托管：
+        </p>
+        <div class="data-table-container" style="margin:18px 0;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>操作步骤</th>
+                <th>界面路径</th>
+                <th>关键参数说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>第 1 步：进入分组管理</strong></td>
+                <td>左侧汉堡菜单 ☰ → 订阅分组设置 → 点击右上角 <code>+</code></td>
+                <td>在“可选地址 (url)”栏粘贴从机场复制的订阅 URL</td>
+              </tr>
+              <tr>
+                <td><strong>第 2 步：拉取节点列表</strong></td>
+                <td>返回主界面 → 点击右上角三点菜单 ⋮</td>
+                <td>选择<strong>“更新订阅”</strong>，等待 2 秒即可完成所有节点同步</td>
+              </tr>
+              <tr>
+                <td><strong>第 3 步：真连接延迟测速</strong></td>
+                <td>主界面右上角三点菜单 ⋮</td>
+                <td>选择“测试全部配置真实延迟”，剔除超时标红节点</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="routing-modes">四、 路由分流模式调优（绕过大陆）</h2>
+        <p>
+          很多用户刚使用时发现“连接节点后国内微信朋友圈打不开”，原因在于默认采用了“全局代理”。正确的分流设置方法：
+        </p>
+        <blockquote>
+          <strong>⚙️ 推荐设置路径：</strong> 左侧抽屉菜单 ☰ → 设置（Settings）→ <strong>路由设置（Routing）</strong> → 预设规则选择 <strong>“绕过局域网及大陆地址 (bypass LAN and mainland)”</strong>。这样可以确保国内应用直接直连、仅外网请求经由代理中转，兼顾速度与国内 App 稳定性。
+        </blockquote>
+
+        <h2 id="troubleshoot">五、 订阅拉取失败与连通报错实操排错</h2>
+        <ul>
+          <li><strong>更新订阅提示 <code>Resolve timeout / SSL handshake failed</code>：</strong>
+            <br>说明机场订阅托管服务器域名遭到运营商 DNS 污染。可在左侧设置中将<strong>“主 DNS”</strong>手动修改为 <code>223.5.5.5</code>（阿里）或 <code>119.29.29.29</code>（腾讯），并在系统浏览器中尝试直接打开订阅链接核实账号是否过期。
+          </li>
+          <li><strong>连接成功但无法上网（提示 <code>Time difference too large</code>）：</strong>
+            <br>VMess/VLESS 协议对时间同步要求极严（时间偏差不得超过 90 秒）。请进入安卓系统“日期与时间”设置，打开<strong>“自动确定日期与时间”</strong>以纠正本地时间戳。
+          </li>
+          <li><strong>部分节点测速显示 <code>-1ms</code> 超时：</strong>
+            <br>表明该节点落地机房正在维护、或该端口遭到运营商临时 QoS 阻断。建议点击右上角重新更新订阅，并切换至标绿的低延迟备用节点。
+          </li>
+        </ul>
+
+      </article>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>© 2026 梯子指南. 知识库网络工程规范文档.</div>
+      <a href="index.html" style="color:var(--accent-verdigris);">返回知识库目录 →</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

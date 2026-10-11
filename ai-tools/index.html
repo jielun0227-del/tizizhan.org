@@ -1,0 +1,1190 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 工具导航：对话、编程、绘图、视频与办公工具合集 | 梯子指南</title>
+  <meta name="description" content="精选 79 款常用 AI 软件与工具官方入口导航：涵盖通用对话、学术研究、AI 编程、办公协作、图像设计、视频生成、音频播客与自动化工作流，直达官方网站。">
+  <meta name="keywords" content="AI工具导航, AI软件, ChatGPT官网, Claude官网, Midjourney, Cursor, AI编程, AI绘画, AI视频">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .ai-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 24px;
+    }
+    .ai-tool-card {
+      background: var(--surface-ore);
+      border: 1px solid var(--border-patina);
+      padding: 22px;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .ai-tool-card:hover {
+      border-color: var(--border-patina-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .ai-tool-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .ai-tool-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-lead);
+    }
+    .ai-tool-category-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      background: rgba(100, 181, 165, 0.1);
+      border: 1px solid var(--border-patina);
+      color: var(--accent-verdigris);
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .ai-tool-desc {
+      font-size: 0.85rem;
+      color: var(--text-patina);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+    .ai-tool-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px solid rgba(112, 169, 161, 0.1);
+    }
+    .btn-ai-direct {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(100, 181, 165, 0.15);
+      border: 1px solid var(--accent-verdigris);
+      color: var(--accent-verdigris-high);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-ai-direct:hover {
+      background: var(--accent-verdigris);
+      color: #0F1413;
+    }
+    .ai-search-box {
+      width: 100%;
+      background: #111816;
+      border: 1px solid var(--border-patina);
+      padding: 12px 18px;
+      color: var(--text-lead);
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      border-radius: 2px;
+      outline: none;
+      margin-bottom: 20px;
+      transition: border-color 0.2s ease;
+    }
+    .ai-search-box:focus {
+      border-color: var(--accent-verdigris);
+    }
+    @media (max-width: 992px) {
+      .ai-tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 640px) {
+      .ai-tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <div class="container header-row">
+      <a href="../index.html" class="site-brand"><span class="brand-glyph">◈</span><span>梯子指南</span></a>
+      <nav class="site-nav">
+        <a href="../index.html#recommended" class="nav-link">推荐机场</a>
+        <a href="index.html" class="nav-link active">AI 软件</a>
+        <a href="../kb/index.html" class="nav-link">知识库</a>
+        <a href="../posts/index.html" class="nav-link">科普文章</a>
+        <a href="../faq/index.html" class="nav-link">机场 FAQ</a>
+        <a href="../coupons/index.html" class="nav-link">机场优惠券</a>
+        <a href="../about/index.html" class="nav-link">关于我们</a>
+      </nav>
+      <div class="header-status-box"><span class="patina-dot"></span><span>收录 79 款官方工具</span></div>
+    </div>
+  </header>
+
+  <main class="site-section">
+    <div class="container">
+      
+      <div class="section-title-wrap">
+        <div>
+          <h1 class="section-title" style="font-size:1.8rem;">AI 软件与工具全景导航目录</h1>
+          <p class="section-subtext">汇集 79 款常见 AI 工具的官方入口，覆盖对话、研究、编程、办公、设计、视频、音频与自动化，点击直达官方主页。</p>
+        </div>
+      </div>
+
+      <!-- Live Search & Category Filter -->
+      <div style="margin-top: 24px;">
+        <input type="text" id="aiSearchInput" class="ai-search-box" placeholder="输入工具名称（如 ChatGPT、Claude、Cursor、Midjourney）或用途快速检索..." onkeyup="filterAiTools()">
+        
+        <div class="filter-pills" id="aiFilterTabs">
+          <button class="pill-btn active" onclick="setCategoryFilter('all', this)">全部工具 (79)</button>
+          <button class="pill-btn" onclick="setCategoryFilter('chat', this)">通用对话 (15)</button>
+          <button class="pill-btn" onclick="setCategoryFilter('research', this)">学术研究 (9)</button>
+          <button class="pill-btn" onclick="setCategoryFilter('code', this)">编程开发 (12)</button>
+          <button class="pill-btn" onclick="setCategoryFilter('office', this)">文案办公 (9)</button>
+          <button class="pill-btn" onclick="setCategoryFilter('design', this)">图像设计 (8)</button>
+          <button class="pill-btn" onclick="setCategoryFilter('video', this)">视频生成 (7)</button>
+          <button class="pill-btn" onclick="setCategoryFilter('audio', this)">音频播客 (8)</button>
+          <button class="pill-btn" onclick="setCategoryFilter('agent', this)">智能体与工作流 (11)</button>
+        </div>
+      </div>
+
+      <!-- AI Tools Grid -->
+      <div class="ai-tools-grid" id="aiToolsGrid">
+
+        <!-- 1. 通用对话 (chat) -->
+        <div class="ai-tool-card" data-cat="chat" data-name="chatgpt">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">ChatGPT</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">通用对话、写作、资料梳理与多模态任务。全球最广泛使用的通用 AI 助手。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">OpenAI 官方</span>
+            <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="claude">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Claude</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">长文阅读、高质量写作与复杂逻辑问题讨论。Anthropic 出品的标杆级模型。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Anthropic 官方</span>
+            <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="gemini">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Gemini</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">Google 的通用 AI 助手与多模态问答入口，深度整合 Google 生态服务。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Google 官方</span>
+            <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="microsoft copilot">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Microsoft Copilot</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">微软的通用对话与搜索助手，集成 Bing 联网搜索与 DALL-E 画图功能。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Microsoft 官方</span>
+            <a href="https://copilot.microsoft.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="grok">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Grok</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">xAI 的对话、深度推理与实时信息生成工具，直连 X (Twitter) 实时舆论数据。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">xAI 官方</span>
+            <a href="https://grok.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="deepseek 深度求索">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">DeepSeek</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">中文问答、深度数学推理与代码辅助，开源大模型领域的极客首选。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">DeepSeek 官方</span>
+            <a href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="kimi 月之暗面">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Kimi</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">支持超长上下文的中文长文阅读、全网智能搜索与日常问答创作。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Moonshot 官方</span>
+            <a href="https://www.kimi.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="通义千问 qwen 阿里">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">通义千问 Qwen</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">阿里巴巴的大语言模型，涵盖通用对话、文档阅读与内容创作入口。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Alibaba 官方</span>
+            <a href="https://www.qwen.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="豆包 字节跳动">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">豆包</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">字节跳动旗下的中文对话与日常创作助手，响应迅速，支持多种语音角色。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">ByteDance 官方</span>
+            <a href="https://www.doubao.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="腾讯元宝">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">腾讯元宝</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">腾讯的中文问答、深度搜索与内容处理助手，支持微信生态长文深度解析。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Tencent 官方</span>
+            <a href="https://yuanbao.tencent.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="z.ai 智谱 glm">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Z.ai（智谱）</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">基于 GLM 大模型的对话与智能体开发入口，学术与企业方案成熟。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">智谱 AI 官方</span>
+            <a href="https://z.ai/chat" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="mistral le chat">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Mistral Le Chat</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">法国 AI 巨头 Mistral 的通用对话与写作工具，开源欧洲之光。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Mistral 官方</span>
+            <a href="https://chat.mistral.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="meta ai llama">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Meta AI</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">基于 Llama 最新模型的 Meta 官方对话与创意助手，多端无缝整合。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Meta 官方</span>
+            <a href="https://www.meta.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="poe quora">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Poe</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">在同一个统一入口探索并使用多个官方（GPT-4、Claude、FLUX）与社区机器人。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Quora 官方</span>
+            <a href="https://poe.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="chat" data-name="character.ai c.ai">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Character.AI</div>
+            <span class="ai-tool-category-badge">通用对话</span>
+          </div>
+          <p class="ai-tool-desc">虚拟角色扮演对话与互动创意平台，提供生动的性格模拟体验。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">c.ai 官方</span>
+            <a href="https://character.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <!-- 2. 学术研究 (research) -->
+        <div class="ai-tool-card" data-cat="research" data-name="perplexity ai 搜索">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Perplexity</div>
+            <span class="ai-tool-category-badge">学术研究</span>
+          </div>
+          <p class="ai-tool-desc">带清晰来源引注链接的对话式智能搜索与课题研究工具，现代检索新标杆。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Perplexity 官方</span>
+            <a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="research" data-name="you.com">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">You.com</div>
+            <span class="ai-tool-category-badge">学术研究</span>
+          </div>
+          <p class="ai-tool-desc">专为研究人员与知识工作者打造的 AI 搜索与多模型深度研究平台。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">You.com 官方</span>
+            <a href="https://you.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="research" data-name="semantic scholar">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Semantic Scholar</div>
+            <span class="ai-tool-category-badge">学术研究</span>
+          </div>
+          <p class="ai-tool-desc">利用 AI 快速检索学术论文、梳理核心引文脉络并发现前沿相关科研文献。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">AI2 官方</span>
+            <a href="https://www.semanticscholar.org/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="research" data-name="genspark">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Genspark</div>
+            <span class="ai-tool-category-badge">学术研究</span>
+          </div>
+          <p class="ai-tool-desc">聚合搜索、复杂任务研究报告自动生成与多方内容对比整理平台。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Genspark 官方</span>
+            <a href="https://www.genspark.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="research" data-name="elicit">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Elicit</div>
+            <span class="ai-tool-category-badge">学术研究</span>
+          </div>
+          <p class="ai-tool-desc">科研级论文检索、研究方法提炼、核心证据提取与学术文献自动表格化整理。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Elicit 官方</span>
+            <a href="https://elicit.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="research" data-name="consensus">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Consensus</div>
+            <span class="ai-tool-category-badge">学术研究</span>
+          </div>
+          <p class="ai-tool-desc">通过检索数千万篇同行评审学术论文，为科学问题快速寻找权威研究共识。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Consensus 官方</span>
+            <a href="https://consensus.app/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="research" data-name="notebooklm 谷歌笔记">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">NotebookLM</div>
+            <span class="ai-tool-category-badge">学术研究</span>
+          </div>
+          <p class="ai-tool-desc">Google 打造的基于自有资料库构建的笔记问答工具，支持一键生成播客对话。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Google 官方</span>
+            <a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="research" data-name="scispace">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">SciSpace</div>
+            <span class="ai-tool-category-badge">学术研究</span>
+          </div>
+          <p class="ai-tool-desc">论文阅读与深度理解工作台，支持复杂数学公式解析与 PDF 即问即答。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">SciSpace 官方</span>
+            <a href="https://scispace.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="research" data-name="researchrabbit">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">ResearchRabbit</div>
+            <span class="ai-tool-category-badge">学术研究</span>
+          </div>
+          <p class="ai-tool-desc">像听音乐发现新歌一样，以可视化网状拓扑图发现相关领域的文献引用关系。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">ResearchRabbit 官方</span>
+            <a href="https://www.researchrabbit.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <!-- 3. 编程开发 (code) -->
+        <div class="ai-tool-card" data-cat="code" data-name="github copilot">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">GitHub Copilot</div>
+            <span class="ai-tool-category-badge">编程开发</span>
+          </div>
+          <p class="ai-tool-desc">IDE 与 GitHub 工作流中最主流的代码自动补全与上下文辅助工具。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">GitHub 官方</span>
+            <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="code" data-name="cursor ai 编辑器">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Cursor</div>
+            <span class="ai-tool-category-badge">编程开发</span>
+          </div>
+          <p class="ai-tool-desc">专为 AI 编程设计的下一代代码编辑器，多文件协同修改与全代码库索引极度顺畅。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Cursor 官方</span>
+            <a href="https://cursor.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="code" data-name="devin cognition">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Devin</div>
+            <span class="ai-tool-category-badge">编程开发</span>
+          </div>
+          <p class="ai-tool-desc">Cognition 研发的全球首个全自主 AI 软件工程师代理，能独立处理工程 Issue。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Cognition 官方</span>
+            <a href="https://devin.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="code" data-name="openai codex">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">OpenAI Codex</div>
+            <span class="ai-tool-category-badge">编程开发</span>
+          </div>
+          <p class="ai-tool-desc">OpenAI 面向软件开发与代码库自动化任务的原生模型与工程套件。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">OpenAI 官方</span>
+            <a href="https://openai.com/codex/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="code" data-name="claude code">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Claude Code</div>
+            <span class="ai-tool-category-badge">编程开发</span>
+          </div>
+          <p class="ai-tool-desc">Anthropic 推出的终端与编辑器全流程代码任务处理智能代理。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Anthropic 官方</span>
+            <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="code" data-name="gemini cli">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Gemini CLI</div>
+            <span class="ai-tool-category-badge">编程开发</span>
+          </div>
+          <p class="ai-tool-desc">Google 官方开源发布的终端命令行轻量 AI 编程辅助工具。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Google 官方</span>
+            <a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="code" data-name="replit agent">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Replit Agent</div>
+            <span class="ai-tool-category-badge">编程开发</span>
+          </div>
+          <p class="ai-tool-desc">在浏览器内全自动化生成数据库、编写后端逻辑并一键部署云端应用。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Replit 官方</span>
+            <a href="https://replit.com/ai" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="code" data-name="v0 vercel">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">v0</div>
+            <span class="ai-tool-category-badge">编程开发</span>
+          </div>
+          <p class="ai-tool-desc">Vercel 推出的自然语言直接生成 React / Tailwind CSS 现代前端界面的原型神器。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Vercel 官方</span>
+            <a href="https://v0.app/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="code" data-name="bolt.new stackblitz">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Bolt</div>
+            <span class="ai-tool-category-badge">编程开发</span>
+          </div>
+          <p class="ai-tool-desc">StackBlitz 打造的在纯浏览器沙箱里全栈构建、运行和调试 Web 应用的环境。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">StackBlitz 官方</span>
+            <a href="https://bolt.new/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="code" data-name="lovable dev">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Lovable</div>
+            <span class="ai-tool-category-badge">编程开发</span>
+          </div>
+          <p class="ai-tool-desc">用自然对话即可从零生成全栈产品原型，并持续交互迭代 UI 与数据层。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Lovable 官方</span>
+            <a href="https://lovable.dev/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="code" data-name="jetbrains ai assistant">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">JetBrains AI</div>
+            <span class="ai-tool-category-badge">编程开发</span>
+          </div>
+          <p class="ai-tool-desc">在 IntelliJ IDEA、PyCharm、WebStorm 等专业开发工具中无缝使用的工程 AI 助手。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">JetBrains 官方</span>
+            <a href="https://www.jetbrains.com/ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="code" data-name="amazon q developer">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Amazon Q Developer</div>
+            <span class="ai-tool-category-badge">编程开发</span>
+          </div>
+          <p class="ai-tool-desc">AWS 官方出品的生成式 AI 编程助手，专注云架构、代码补全与微服务转型。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">AWS 官方</span>
+            <a href="https://aws.amazon.com/q/developer/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <!-- 4. 文案办公 (office) -->
+        <div class="ai-tool-card" data-cat="office" data-name="notion ai">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Notion AI</div>
+            <span class="ai-tool-category-badge">文案办公</span>
+          </div>
+          <p class="ai-tool-desc">在 Notion 知识库和工作区内实现一键智能撰写、整理摘要与全局知识库问答检索。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Notion 官方</span>
+            <a href="https://www.notion.com/product/ai" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="office" data-name="grammarly">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Grammarly</div>
+            <span class="ai-tool-category-badge">文案办公</span>
+          </div>
+          <p class="ai-tool-desc">国际通用的专业英文写作语法修改、学术与商务语气调整及全文校对助手。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Grammarly 官方</span>
+            <a href="https://www.grammarly.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="office" data-name="quillbot">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">QuillBot</div>
+            <span class="ai-tool-category-badge">文案办公</span>
+          </div>
+          <p class="ai-tool-desc">领先的英文句式同义改写润色、长篇摘要生成与查重校对工具。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">QuillBot 官方</span>
+            <a href="https://quillbot.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="office" data-name="gamma app ppt">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Gamma</div>
+            <span class="ai-tool-category-badge">文案办公</span>
+          </div>
+          <p class="ai-tool-desc">输入大纲或主题一键自动生成排版精美、支持互动嵌入的演示文稿 PPT 与网页文档。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Gamma 官方</span>
+            <a href="https://gamma.app/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="office" data-name="canva magic studio">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Canva Magic Studio</div>
+            <span class="ai-tool-category-badge">文案办公</span>
+          </div>
+          <p class="ai-tool-desc">在 Canva 中一站式搞定社媒图文、宣传海报设计与多媒体演示视觉创作。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Canva 官方</span>
+            <a href="https://www.canva.com/magic/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="office" data-name="microsoft 365 copilot office">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Microsoft 365 Copilot</div>
+            <span class="ai-tool-category-badge">文案办公</span>
+          </div>
+          <p class="ai-tool-desc">在 Word、Excel、PowerPoint 与 Teams 原生应用中无缝辅助文档写作与数据洞察。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Microsoft 官方</span>
+            <a href="https://www.microsoft.com/microsoft-365/copilot/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="office" data-name="gemini for workspace google docs">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Gemini for Workspace</div>
+            <span class="ai-tool-category-badge">文案办公</span>
+          </div>
+          <p class="ai-tool-desc">Google Docs、Sheets、Gmail 与 Slides 中的内置智能写作与企业团队协同助手。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Google 官方</span>
+            <a href="https://workspace.google.com/solutions/ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="office" data-name="jasper ai 营销文案">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Jasper</div>
+            <span class="ai-tool-category-badge">文案办公</span>
+          </div>
+          <p class="ai-tool-desc">面向企业营销与品牌团队的高转化文案工作流工具，支持品牌语调定制。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Jasper 官方</span>
+            <a href="https://www.jasper.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="office" data-name="copy.ai">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Copy.ai</div>
+            <span class="ai-tool-category-badge">文案办公</span>
+          </div>
+          <p class="ai-tool-desc">出海电商与数字营销常用的高转化文案与业务内容分发自动化平台。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Copy.ai 官方</span>
+            <a href="https://www.copy.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <!-- 5. 图像设计 (design) -->
+        <div class="ai-tool-card" data-cat="design" data-name="midjourney 绘图">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Midjourney</div>
+            <span class="ai-tool-category-badge">图像设计</span>
+          </div>
+          <p class="ai-tool-desc">以提示词探索顶级艺术概念、真实摄影与商业插画视觉效果的行业天花板。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Midjourney 官方</span>
+            <a href="https://www.midjourney.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="design" data-name="adobe firefly 萤火虫">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Adobe Firefly</div>
+            <span class="ai-tool-category-badge">图像设计</span>
+          </div>
+          <p class="ai-tool-desc">Adobe 出品的商业安全图像生成与创成式填充编辑工具，直接整合 Photoshop。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Adobe 官方</span>
+            <a href="https://www.adobe.com/products/firefly.html" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="design" data-name="ideogram 排版海报">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Ideogram</div>
+            <span class="ai-tool-category-badge">图像设计</span>
+          </div>
+          <p class="ai-tool-desc">图像生成中英文文字渲染与海报排版效果极佳的视觉创作神器。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Ideogram 官方</span>
+            <a href="https://ideogram.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="design" data-name="leonardo ai">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Leonardo AI</div>
+            <span class="ai-tool-category-badge">图像设计</span>
+          </div>
+          <p class="ai-tool-desc">功能全面的游戏资产原画、材质模型生成与创意设计专业工作台。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Leonardo 官方</span>
+            <a href="https://leonardo.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="design" data-name="recraft 矢量插画">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Recraft</div>
+            <span class="ai-tool-category-badge">图像设计</span>
+          </div>
+          <p class="ai-tool-desc">专注生成 SVG 矢量图标、3D 元素与统一品牌视觉风格的专业设计利器。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Recraft 官方</span>
+            <a href="https://www.recraft.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="design" data-name="krea ai 实时作画">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Krea</div>
+            <span class="ai-tool-category-badge">图像设计</span>
+          </div>
+          <p class="ai-tool-desc">毫秒级实时涂鸦生成高清画面、图像超分增强（Enhancer）与视觉调优。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Krea 官方</span>
+            <a href="https://www.krea.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="design" data-name="figma make 原型">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Figma Make</div>
+            <span class="ai-tool-category-badge">图像设计</span>
+          </div>
+          <p class="ai-tool-desc">在 Figma 中由自然语言提示词与现有画板快速创建高保真 UI 与交互原型。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Figma 官方</span>
+            <a href="https://www.figma.com/make/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="design" data-name="stability ai stable diffusion">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Stability AI</div>
+            <span class="ai-tool-category-badge">图像设计</span>
+          </div>
+          <p class="ai-tool-desc">Stable Diffusion 系列开源模型创造者，提供全套云端 API 与创意套件。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Stability 官方</span>
+            <a href="https://stability.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <!-- 6. 视频生成 (video) -->
+        <div class="ai-tool-card" data-cat="video" data-name="runway gen-2 gen-3">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Runway</div>
+            <span class="ai-tool-category-badge">视频生成</span>
+          </div>
+          <p class="ai-tool-desc">电影级 AI 视频生成（Gen-2/Gen-3）与专业镜头运动后期创作工作流平台。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Runway 官方</span>
+            <a href="https://runwayml.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="video" data-name="pika labs">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Pika</div>
+            <span class="ai-tool-category-badge">视频生成</span>
+          </div>
+          <p class="ai-tool-desc">短视频创意生成平台，支持局部物理特效（膨胀/融化/切割）等趣味交互。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Pika 官方</span>
+            <a href="https://pika.art/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="video" data-name="luma dream machine">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Luma Dream Machine</div>
+            <span class="ai-tool-category-badge">视频生成</span>
+          </div>
+          <p class="ai-tool-desc">Luma 出品的高写实度视频大模型，擅长连贯的镜头推拉与复杂物理规律呈现。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Luma 官方</span>
+            <a href="https://lumalabs.ai/dream-machine" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="video" data-name="可灵 kling 快手">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">可灵 Kling</div>
+            <span class="ai-tool-category-badge">视频生成</span>
+          </div>
+          <p class="ai-tool-desc">快手旗下的标杆级 AI 视频创作平台，支持长达数分钟的高清电影感运镜生成。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Kuaishou 官方</span>
+            <a href="https://kling.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="video" data-name="google flow veo">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Google Flow</div>
+            <span class="ai-tool-category-badge">视频生成</span>
+          </div>
+          <p class="ai-tool-desc">Google 打造的面向影视与创意人员的图像与 Veo 视频模型创意工作台。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Google 官方</span>
+            <a href="https://flow.google.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="video" data-name="heygen 数字人">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">HeyGen</div>
+            <span class="ai-tool-category-badge">视频生成</span>
+          </div>
+          <p class="ai-tool-desc">高保真数字人出镜、多语种口型同步翻译与出海带货口播视频制作平台。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">HeyGen 官方</span>
+            <a href="https://www.heygen.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="video" data-name="synthesia 虚拟人">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Synthesia</div>
+            <span class="ai-tool-category-badge">视频生成</span>
+          </div>
+          <p class="ai-tool-desc">企业级 AI 虚拟人培训、多语言知识库讲解视频批量制作平台。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Synthesia 官方</span>
+            <a href="https://www.synthesia.io/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <!-- 7. 音频播客 (audio) -->
+        <div class="ai-tool-card" data-cat="audio" data-name="elevenlabs 语音克隆">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">ElevenLabs</div>
+            <span class="ai-tool-category-badge">音频播客</span>
+          </div>
+          <p class="ai-tool-desc">行业顶级的情感拟真语音合成（TTS）、声音克隆与智能配音工具。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">ElevenLabs 官方</span>
+            <a href="https://elevenlabs.io/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="audio" data-name="suno 音乐生成">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Suno</div>
+            <span class="ai-tool-category-badge">音频播客</span>
+          </div>
+          <p class="ai-tool-desc">只需输入歌词或风格描述即可一键生成录音室级人声歌唱与全套编曲。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Suno 官方</span>
+            <a href="https://suno.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="audio" data-name="udio 音乐制作">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Udio</div>
+            <span class="ai-tool-category-badge">音频播客</span>
+          </div>
+          <p class="ai-tool-desc">高品质歌曲生成、段落延展拼接与个性化风格混音创作平台。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Udio 官方</span>
+            <a href="https://www.udio.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="audio" data-name="descript 文本剪辑">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Descript</div>
+            <span class="ai-tool-category-badge">音频播客</span>
+          </div>
+          <p class="ai-tool-desc">像编辑 Word 文档一样轻松剪辑音视频与播客，自动去除口头禅与静音。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Descript 官方</span>
+            <a href="https://www.descript.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="audio" data-name="adobe podcast 语音降噪">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Adobe Podcast</div>
+            <span class="ai-tool-category-badge">音频播客</span>
+          </div>
+          <p class="ai-tool-desc">AI 语音一键消除环境杂音回声，瞬间将手机录音提升至录音棚专业质感。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Adobe 官方</span>
+            <a href="https://podcast.adobe.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="audio" data-name="murf ai 配音">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Murf</div>
+            <span class="ai-tool-category-badge">音频播客</span>
+          </div>
+          <p class="ai-tool-desc">企业级商业配音、课件旁白制作与自然拟真多角色语音生成工具。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Murf 官方</span>
+            <a href="https://murf.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="audio" data-name="otter ai 会议转写">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Otter</div>
+            <span class="ai-tool-category-badge">音频播客</span>
+          </div>
+          <p class="ai-tool-desc">实时语音会议英文转写、区分发言人角色并自动提炼会议核心行动要点。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Otter 官方</span>
+            <a href="https://otter.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="audio" data-name="fireflies.ai 会议记录">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Fireflies.ai</div>
+            <span class="ai-tool-category-badge">音频播客</span>
+          </div>
+          <p class="ai-tool-desc">自动接入 Zoom、Google Meet 与 Teams 会议录音录屏，智能整理纪要与检索。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Fireflies 官方</span>
+            <a href="https://fireflies.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <!-- 8. 智能体与工作流 (agent) -->
+        <div class="ai-tool-card" data-cat="agent" data-name="zapier ai 自动化">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Zapier AI</div>
+            <span class="ai-tool-category-badge">智能体与工作流</span>
+          </div>
+          <p class="ai-tool-desc">把 AI 动作节点无缝接入数千款跨应用跨云端平台的无代码自动化工作流。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Zapier 官方</span>
+            <a href="https://zapier.com/ai" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="agent" data-name="make.com 流程编排">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Make</div>
+            <span class="ai-tool-category-badge">智能体与工作流</span>
+          </div>
+          <p class="ai-tool-desc">以极其直观的可视化画布串联各方 SaaS API 与 AI 服务构建强大自动化系统。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Make 官方</span>
+            <a href="https://www.make.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="agent" data-name="n8n 开源自动化">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">n8n</div>
+            <span class="ai-tool-category-badge">智能体与工作流</span>
+          </div>
+          <p class="ai-tool-desc">可私有化自托管的开源高自由度工作流与 AI Agent 自动化集成平台。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">n8n 官方</span>
+            <a href="https://n8n.io/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="agent" data-name="dify 智能体知识库">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Dify</div>
+            <span class="ai-tool-category-badge">智能体与工作流</span>
+          </div>
+          <p class="ai-tool-desc">开源 LLM 应用开发平台，可视化构建基于 RAG 知识库的企业级智能体流程。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Dify 官方</span>
+            <a href="https://dify.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="agent" data-name="coze 扣子 字节">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Coze</div>
+            <span class="ai-tool-category-badge">智能体与工作流</span>
+          </div>
+          <p class="ai-tool-desc">字节跳动推出的无代码一站式 AI 智能体搭建平台，集成海量插件生态与 Bot 部署。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Coze 官方</span>
+            <a href="https://www.coze.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="agent" data-name="flowise langgraph">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Flowise</div>
+            <span class="ai-tool-category-badge">智能体与工作流</span>
+          </div>
+          <p class="ai-tool-desc">以拖拽节点的方式可视化搭建 LangChain 与 LlamaIndex 大模型工作流。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Flowise 官方</span>
+            <a href="https://flowiseai.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="agent" data-name="hugging face 模型社区">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Hugging Face</div>
+            <span class="ai-tool-category-badge">智能体与工作流</span>
+          </div>
+          <p class="ai-tool-desc">全球最大的开源大模型、前沿数据集和交互演示 Spaces 应用开发者社区。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">HF 官方</span>
+            <a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="agent" data-name="ollama 本地运行">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Ollama</div>
+            <span class="ai-tool-category-badge">智能体与工作流</span>
+          </div>
+          <p class="ai-tool-desc">在个人电脑本地一行命令轻松运行 Llama 3、DeepSeek、Qwen 等开源大模型。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Ollama 官方</span>
+            <a href="https://ollama.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="agent" data-name="lm studio 本地模型">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">LM Studio</div>
+            <span class="ai-tool-category-badge">智能体与工作流</span>
+          </div>
+          <p class="ai-tool-desc">桌面端可视化本地大模型下载器与图形化对话界面，提供兼容 OpenAI 的本地 API。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">LM Studio 官方</span>
+            <a href="https://lmstudio.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="agent" data-name="replicate api">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">Replicate</div>
+            <span class="ai-tool-category-badge">智能体与工作流</span>
+          </div>
+          <p class="ai-tool-desc">无需自备 GPU 服务器，通过一行云端 API 调用运行数万款开源 AI 视觉与语言模型。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">Replicate 官方</span>
+            <a href="https://replicate.com/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-tool-card" data-cat="agent" data-name="openrouter 聚合接口">
+          <div class="ai-tool-header">
+            <div class="ai-tool-title">OpenRouter</div>
+            <span class="ai-tool-category-badge">智能体与工作流</span>
+          </div>
+          <p class="ai-tool-desc">通过单一统一标准接口低成本调用全球数百个不同大模型提供商的顶尖 API。</p>
+          <div class="ai-tool-footer">
+            <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">OpenRouter 官方</span>
+            <a href="https://openrouter.ai/" target="_blank" rel="noopener noreferrer" class="btn-ai-direct">打开官网 ↗</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No Results Feedback -->
+      <div id="aiNoResults" style="display:none; text-align:center; padding:50px 0; color:var(--text-patina);">
+        <p style="font-family:var(--font-serif); font-size:1.1rem; color:var(--text-lead);">没有找到匹配的 AI 工具</p>
+        <p style="font-size:0.85rem; margin-top:8px;">试试更短的关键词，或点击上方分类筛选标签恢复显示。</p>
+      </div>
+
+      <!-- Usage Tips -->
+      <div style="margin-top:60px; padding:24px; background:var(--surface-ore); border:1px solid var(--border-patina);">
+        <h3 style="font-family:var(--font-serif); font-size:1.15rem; color:var(--accent-verdigris); margin-bottom:10px;">🛡️ 选用提醒：先看能否完成你的具体任务</h3>
+        <p style="font-size:0.85rem; color:var(--text-patina); line-height:1.7;">
+          同一类工具的免费额度、上传限制、模型能力和地区支持可能不同。访问 OpenAI (ChatGPT)、Claude 等服务时，建议搭配本站推荐的稳定机场日美专线节点以避免触发官方地区风控。目录链接均直接指向各大产品官方网址，收录旨在方便开发者与研究人员快速查找。
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>© 2026 梯子指南. AI 工具导航合集. 直通各官方网站.</div>
+      <a href="../index.html#recommended" style="color:var(--accent-verdigris);">返回首页精选机场 →</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    let currentCategory = 'all';
+
+    function setCategoryFilter(cat, btn) {
+      currentCategory = cat;
+      const pills = document.querySelectorAll('#aiFilterTabs .pill-btn');
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      filterAiTools();
+    }
+
+    function filterAiTools() {
+      const q = (document.getElementById('aiSearchInput').value || '').toLowerCase().trim();
+      const cards = document.querySelectorAll('#aiToolsGrid .ai-tool-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-cat');
+        const name = card.getAttribute('data-name');
+        const text = card.innerText.toLowerCase();
+
+        const matchesCat = (currentCategory === 'all' || cat === currentCategory);
+        const matchesQuery = (!q || name.includes(q) || text.includes(q));
+
+        if (matchesCat && matchesQuery) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      const noRes = document.getElementById('aiNoResults');
+      if (visibleCount === 0) {
+        noRes.style.display = 'block';
+      } else {
+        noRes.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

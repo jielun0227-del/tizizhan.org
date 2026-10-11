@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>博客运营 5 维实操级 AI 提示词库 (Prompt Hub) | SPEEDLAB</title>
+  <meta name="description" content="站长必备：打造高转化率与长期 SEO 流量博客的 5 维实操级 AI 提示词库，包含 SEO 长尾词教程批量产出、标准测评报告结构化生成、Hero 广告文案策划与合规免责声明。">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">
+          <span class="logo-title">SPEED<span class="gradient-text">LAB</span></span>
+          <span class="logo-subtitle">极客机场测速实验室</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="../index.html" class="nav-link">首页</a>
+        <a href="../reviews/index.html" class="nav-link">机场评测</a>
+        <a href="../docs/index.html" class="nav-link">配置教程 & 知识库</a>
+        <a href="../faq/index.html" class="nav-link">避坑 FAQ</a>
+        <a href="index.html" class="nav-link active">关于 & 评测标准</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="article-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="../index.html">首页</a> <span>/</span>
+        <a href="index.html">关于本站</a> <span>/</span>
+        <span>站长运营 AI 提示词库</span>
+      </div>
+      <h1 class="article-title">博客运营全周期：5 个核心维度实操级 AI 提示词库</h1>
+      <p class="section-desc" style="max-width: 800px;">
+        搭建并持续运营一个兼具高转化率与长期 SEO 流量的测评博客，光靠单篇模版还不够。以下为 5 维实操级 AI 提示词，支持一键复制到 ChatGPT / Claude 中直接使用。
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="article-layout">
+      
+      <article class="article-body">
+        
+        <h2>维度一：SEO 长尾词与文章批量生成提示词</h2>
+        <p>用于知识库板块批量产出教程、科普和排错文章，收割 Google / 必应长尾搜索流量：</p>
+
+        <!-- Prompt 1 Box -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin: 20px 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <strong style="color: #38bdf8; font-size: 1.05rem;">提示词 1（客户端零基础教程）</strong>
+            <button class="btn btn-sm btn-outline" onclick="copyPrompt('p1', this)">📋 一键复制提示词</button>
+          </div>
+          <pre id="p1" style="white-space: pre-wrap; font-size: 0.9rem; margin:0;">请以专业网络博主的口吻，为我的博客编写一篇《2026 最新 [Clash Verge Rev / Shadowrocket / Sing-box] 零基础新手导入与分流规则配置教程》。
+
+要求：
+1. 结构包括：软件下载与安装避坑、一键订阅与手动订阅步骤、全局/规则/直连模式区别、核心分流配置（针对流媒体与 ChatGPT）、常见连接报错与解决。
+2. 排版采用清晰的 Markdown 语法，重点操作加粗，代码配置放入代码块。
+3. 自然植入 2 处引导语，推荐用户使用高稳定性 IPLC 专线避免订阅失败（预留推广链接占位符）。
+4. 结尾生成一段用于 SEO 的 150 字 Meta Description 与 5 个核心搜索标签。</pre>
+        </div>
+
+        <!-- Prompt 2 Box -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin: 20px 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <strong style="color: #38bdf8; font-size: 1.05rem;">提示词 2（协议/技术深度科普）</strong>
+            <button class="btn btn-sm btn-outline" onclick="copyPrompt('p2', this)">📋 一键复制提示词</button>
+          </div>
+          <pre id="p2" style="white-space: pre-wrap; font-size: 0.9rem; margin:0;">请写一篇通俗易懂但技术细节扎实的科普长文，标题为《为什么你的梯子晚高峰总卡顿？从 IPLC 专线与普通 BGP/公网中继的技术原理说起》。
+
+要求：
+1. 从跨境骨干网拥堵、QoS 限制、丢包重传机制展开，对比 IPLC/IEPL 专线与直连优化的物理差异；
+2. 采用表格对比它们的延迟、丢包率、抗封锁能力与成本；
+3. 文风客观严谨，树立博客技术权威。</pre>
+        </div>
+
+        <h2>维度二：深度测评报告结构化生成提示词</h2>
+        <p>用于测评板块，让 AI 按照统一标准生成客观度高、转化能力强的测评正文：</p>
+
+        <!-- Prompt 3 Box -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin: 20px 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <strong style="color: #34d399; font-size: 1.05rem;">提示词 3（标准化机场评测报告）</strong>
+            <button class="btn btn-sm btn-outline" onclick="copyPrompt('p3', this)">📋 一键复制提示词</button>
+          </div>
+          <pre id="p3" style="white-space: pre-wrap; font-size: 0.9rem; margin:0;">我要为机场【[机场名称]】撰写一篇深度评测文章，基本信息如下：
+- 线路类型：[例如：全内网 IPLC 专线 / BGP 中继]
+- 套餐价格：[例如：月付 18 元起 / 按量 0.5元/G]
+- 节点覆盖：[香港、日本、新加坡、美国等]
+- 解锁能力：[Netflix, Disney+, OpenAI, TikTok]
+
+请按照以下模块生成一篇完整的 Markdown 评测报告：
+1. 核心卖点与推荐指数总结（1-5星）
+2. 晚高峰测速表现分析（以电信/联通/移动三大运营商晚 21:00 测试数据角度撰写解读）
+3. 流媒体与 ChatGPT 原生解锁测试结果表格
+4. 套餐性价比与适合人群定位（轻度翻墙/跨境电商/重度追剧/合租）
+5. 优缺点客观对比（Pros & Cons 两栏）
+6. 避坑指南与退款政策提醒
+
+整体语言专业中立，避免纯广告营销腔，增强读者信任感。</pre>
+        </div>
+
+        <h2>维度三：转化率优化 (CRO) 与广告文案提示词</h2>
+        <p>用于首页首屏、侧边栏悬浮条、优惠券看板的高点击率文案策划：</p>
+
+        <!-- Prompt 4 Box -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin: 20px 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <strong style="color: #f59e0b; font-size: 1.05rem;">提示词 4（高点击率 Hero Banner 广告文案）</strong>
+            <button class="btn btn-sm btn-outline" onclick="copyPrompt('p4', this)">📋 一键复制提示词</button>
+          </div>
+          <pre id="p4" style="white-space: pre-wrap; font-size: 0.9rem; margin:0;">请为我博客首页的首屏大横幅（Hero Banner）构思 5 套不同风格的推广文案，针对主推的旗舰专线机场：
+
+风格包括：
+1. 痛点暴击型（主打晚高峰不卡顿、拒绝断流）
+2. 极致性价比型（主打低价高配、不超卖）
+3. AI / 办公重度用户专属型（主打 ChatGPT 住宅原生 IP 解锁、办公不掉线）
+4. 极客硬核技术型（主打原生 IPLC、全天丢包率低于 0.1%）
+5. 紧迫促销型（主打限时大促与专属折扣码）
+
+每套需包含：一个抓人眼球的主标题（20字内）、副标题阐述（40字内）、CTA 按钮文案、优惠码引导语。</pre>
+        </div>
+
+        <h2>维度四：避坑 FAQ 批量问答提示词</h2>
+        <p>用于丰富 FAQ 板块并自动适配 Google Rich Snippet（富媒体摘要）：</p>
+
+        <!-- Prompt 5 Box -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin: 20px 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <strong style="color: #c7d2fe; font-size: 1.05rem;">提示词 5（高权重 FAQ 问答生成）</strong>
+            <button class="btn btn-sm btn-outline" onclick="copyPrompt('p5', this)">📋 一键复制提示词</button>
+          </div>
+          <pre id="p5" style="white-space: pre-wrap; font-size: 0.9rem; margin:0;">针对初次接触外网代理的新手用户，生成 10 个高频搜索疑问及权威解答。
+
+覆盖话题：月付与年付的选择策略、如何识别跑路风险高的机场、为什么同一个节点测速快但看视频卡、Shadowrocket 节点全部超时排错、机场节点会被窃取个人密码吗（安全性分析）。
+
+答案要求直击要害，字数在 120-180 字之间，适合直接放进 HTML 的 <details> 折叠卡片，并符合 Google FAQPage 结构化标记收录要求。</pre>
+        </div>
+
+        <h2>维度五：博客品牌定位与合规文案提示词</h2>
+        <p>用于“关于本站”及免责声明，降低版权与法律风险，提升专业度：</p>
+
+        <!-- Prompt 6 Box -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin: 20px 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <strong style="color: #fb7185; font-size: 1.05rem;">提示词 6（免责声明与测评伦理）</strong>
+            <button class="btn btn-sm btn-outline" onclick="copyPrompt('p6', this)">📋 一键复制提示词</button>
+          </div>
+          <pre id="p6" style="white-space: pre-wrap; font-size: 0.9rem; margin:0;">请为我的机场导航博客起草一份专业的《免责声明与测评伦理准则（About & Disclaimer）》。
+
+要求涵盖：
+1. 声明本站仅提供网络性能技术交流、学术研究与外贸跨境工具评测，严禁用于违法用途。
+2. 透明说明本站包含推广（Affiliate）佣金链接，但承诺佣金不影响测评真实数据。
+3. 风险提示：网络节点服务由第三方独立提供，提示用户谨防资金风险并优先选择短周期订阅。</pre>
+        </div>
+
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="article-sidebar">
+        <div class="sidebar-sticky-wrap">
+          <div class="sidebar-card">
+            <div class="sidebar-title">⚡ 快速应用</div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 12px;">直接复制上述提示词发给大语言模型（如 ChatGPT / Claude），即可高效为本站填充海量高质量长尾内容与测评文章！</p>
+            <a href="../docs/index.html" class="btn btn-primary" style="width:100%;">查看当前知识库产出 →</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom-inner" style="padding: 24px 0;">
+      <p class="copyright-text">© 2026 SPEEDLAB. 站长 5 维运营提示词工具箱。</p>
+      <a href="index.html" class="footnote-link">关于本站与免责准则</a>
+    </div>
+  </footer>
+
+  <div class="toast-notice" id="toastNotice">提示词已复制到剪贴板！</div>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    function copyPrompt(elementId, btn) {
+      const text = document.getElementById(elementId).innerText;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast("提示词已复制到剪贴板！");
+          btn.innerText = "✓ 已复制";
+          setTimeout(() => { btn.innerText = "📋 一键复制提示词"; }, 2000);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

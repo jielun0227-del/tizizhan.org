@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 最新 Shadowrocket (小火箭) 零基础新手导入与分流规则配置教程 | SPEEDLAB</title>
+  <meta name="description" content="2026最新iOS小火箭Shadowrocket配置教程：正版下载避坑、一键订阅与手动扫码、全局/规则/直连模式区别、核心流媒体与ChatGPT分流配置，以及常见超时排错。">
+  <meta name="keywords" content="Shadowrocket教程, 小火箭配置, iOS翻墙教程, 小火箭分流规则, 小火箭ChatGPT配置">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+
+  <!-- TechArticle Schema JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "2026 最新 Shadowrocket (小火箭) 零基础新手导入与分流规则配置教程",
+    "datePublished": "2026-10-11",
+    "dateModified": "2026-10-11",
+    "author": {
+      "@type": "Organization",
+      "name": "SPEEDLAB 测速实验室"
+    },
+    "description": "专为 iOS 用户定制的 Shadowrocket 零基础图文配置指南，涵盖一键订阅、分流规则优化与常见连接故障排查。"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="brand-logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">
+          <span class="logo-title">SPEED<span class="gradient-text">LAB</span></span>
+          <span class="logo-subtitle">极客机场测速实验室</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="../../index.html" class="nav-link">首页</a>
+        <a href="../../reviews/index.html" class="nav-link">机场评测</a>
+        <a href="../index.html" class="nav-link active">配置教程 & 知识库</a>
+        <a href="../../faq/index.html" class="nav-link">避坑 FAQ</a>
+        <a href="../../about/index.html" class="nav-link">关于 & 评测标准</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="article-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="../../index.html">首页</a> <span>/</span>
+        <a href="../index.html">知识库</a> <span>/</span>
+        <span>客户端全套教程</span>
+      </div>
+      <h1 class="article-title">2026 最新 Shadowrocket (小火箭) 零基础新手导入与分流规则配置教程</h1>
+      <div class="article-meta-bar">
+        <span>📅 最后更新：<strong>2026年10月</strong></span>
+        <span>📂 分类：iOS 客户端配置</span>
+        <span>⏱️ 阅读建议：5 分钟</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Article Body -->
+  <div class="container">
+    <div class="article-layout">
+      
+      <article class="article-body">
+        
+        <h2>前言：认识 Shadowrocket (小火箭)</h2>
+        <p>
+          <strong>Shadowrocket</strong>（俗称“小火箭”）是 iOS 平台上最流行、功能最完备的代理工具之一。它支持包括 Shadowsocks、Vmess、VLESS、Trojan、Hysteria2 等绝大多数主流协议。
+        </p>
+        <p>
+          本教程专为新手编写，从安装下载避坑、导入订阅，到配置最省心智能的<strong>“配置 (分流规则) 模式”</strong>，助你一次性搞定顺畅出海。
+        </p>
+
+        <h2>一、 软件下载与安装避坑指南</h2>
+        <blockquote>
+          ⚠️ <strong>致命避坑警告：</strong><br>
+          中国大陆地区的 Apple ID 无法在 App Store 搜到正版 Shadowrocket！国内搜索出来的均为李鬼恶意山寨盗版软件，切勿购买或下载！
+        </blockquote>
+        <p><strong>正确下载姿势：</strong></p>
+        <ol>
+          <li>准备一个<strong>非国区 Apple ID</strong>（美区/港区/日区均可）；</li>
+          <li>打开 iPhone 的 App Store，点击右上角头像退出当前账号，登录海外 Apple ID；</li>
+          <li>搜索 <code>Shadowrocket</code>（开发者为 <em>Pan modal</em>，售价一般为 $2.99 美元）；</li>
+          <li>下载安装完成后，退出海外账号并切回你原本的国内常用 Apple ID，软件可永久正常使用。</li>
+        </ol>
+
+        <h2>二、 节点导入：一键订阅与手动扫码</h2>
+        <p>
+          要使用小火箭上网，必须配合稳定可靠的机场节点。
+        </p>
+        
+        <blockquote>
+          💡 <strong>内链导流推荐：</strong><br>
+          许多新手初次配置时因使用免费节点或劣质公网机场，导致小火箭提示“连接超时”或频繁掉线。推荐搭配使用本站实测推荐的 <a href="../../reviews/aurora-review.html" style="color:var(--accent-blue); text-decoration:underline;">极光云 (Aurora) IPLC 全专线机场</a>（晚高峰丢包低于 0.08%），订阅导入成功率 100%。
+        </blockquote>
+
+        <h3>方法 A：一键导入订阅（最推荐）</h3>
+        <ol>
+          <li>登录你的机场用户后台（以 <a href="../../reviews/aurora-review.html">极光云</a> 为例）；</li>
+          <li>在用户中心找到 <strong>“便捷导入”</strong> 或 <strong>“一键导入 Shadowrocket / 小火箭”</strong>；</li>
+          <li>点击后系统会自动唤醒 Shadowrocket 并弹窗提示是否保存订阅，点击 <strong>“保存”</strong> 即可。</li>
+        </ol>
+
+        <h3>方法 B：手动复制订阅链接导入</h3>
+        <ol>
+          <li>在机场后台复制订阅链接（以 <code>https://...</code> 开头）；</li>
+          <li>打开 Shadowrocket，点击右上角的 <code>+</code> 号；</li>
+          <li>在“类型”中选择 <strong>“Subscribe (订阅)”</strong>；</li>
+          <li>将链接粘贴至 <strong>“URL”</strong> 输入框中，并在“备注”中输入机场名称（如：极光专线）；</li>
+          <li>点击右上角 <strong>“完成”</strong>，软件将自动下载并列出几十个海外高速节点。</li>
+        </ol>
+
+        <h2>三、 核心设置：全局、配置 (分流)、直连模式区别</h2>
+        <p>
+          进入小火箭主界面，在开关下方有“全局路由”设置，新手必须弄清三种模式的区别：
+        </p>
+        <ul>
+          <li><strong>配置 (Config) 模式【强烈推荐】：</strong> 智能分流模式。访问国内应用（微信、百度、淘宝、B站）走本地直连，访问国外封锁网站（Google、YouTube、Netflix、ChatGPT）自动走代理节点。既省流量又保证国内 APP 速度飞快。</li>
+          <li><strong>代理 (Proxy) 模式：</strong> 所有网络流量不论国内外强行全部走代理节点。可能导致国内 APP 定位变到海外，并浪费大量机场流量。</li>
+          <li><strong>直连 (Direct) 模式：</strong> 不走任何代理，相当于直接裸连。</li>
+        </ul>
+
+        <h2>四、 进阶配置：针对流媒体与 ChatGPT 的智能规则</h2>
+        <p>
+          如果你经常使用 <strong>OpenAI ChatGPT</strong> 或收看 <strong>Netflix / Disney+</strong>，建议在小火箭底部菜单进入 <strong>“配置”</strong> 页面：
+        </p>
+        <ol>
+          <li>点击 <code>default.conf</code> 后的感叹号图标，选择 <strong>“规则”</strong>；</li>
+          <li>点击右上角 <code>+</code> 号添加分流规则：
+            <pre><code>DOMAIN-KEYWORD, openai, PROXY
+DOMAIN-SUFFIX, chatgpt.com, PROXY
+DOMAIN-SUFFIX, anthropic.com, PROXY
+DOMAIN-KEYWORD, netflix, PROXY</code></pre>
+          </li>
+          <li>确保指定分流规则指向支持住宅原生 IP 的地区节点（如美国或日本）。</li>
+        </ol>
+
+        <blockquote>
+          💡 <strong>小提示：</strong> 选购机场时请参考本站整理的 <a href="../../reviews/index.html">2026 优质机场解锁矩阵</a>，选择原生支持 ChatGPT 免手机验证的节点。
+        </blockquote>
+
+        <h2>五、 常见连接报错与排错清单</h2>
+        <p><strong>1. 打开连接开关后，提示需要添加 VPN 配置？</strong><br>
+        初次使用系统会弹出系统授权弹窗，必须点击“Allow (允许)”并验证面容或开机密码。</p>
+
+        <p><strong>2. 节点全部显示超时（Timeout）或 Ping 失败？</strong><br>
+        首先检查手机系统时间是否精准到“自动设置”，时间偏差超过 90 秒会导致 TLS 握手彻底失败；其次请阅读本站知识库的 <a href="../troubleshooting/node-timeout-fix.html">《节点全部超时 5 步排查指南》</a>。</p>
+
+        <h2>六、 总结与 SEO 摘要</h2>
+        <div style="background: rgba(0,0,0,0.3); border-left: 3px solid #34d399; padding: 16px; border-radius: 6px; font-size: 0.9rem;">
+          <strong>Meta Description (150字)：</strong><br>
+          本文为 2026 最新 Shadowrocket (小火箭) 零基础小白配置指南。详细演示海外 Apple ID 下载避坑、一键订阅导入、配置模式智能分流，以及 ChatGPT 与流媒体原生解锁设置方案。助你告别节点超时与断流，畅享高速稳定出海体验。
+          <br><br>
+          <strong>核心搜索标签：</strong> <code>Shadowrocket教程</code> <code>小火箭配置</code> <code>iOS代理软件</code> <code>IPLC专线订阅</code> <code>小火箭分流规则</code>
+        </div>
+
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="article-sidebar">
+        <div class="sidebar-sticky-wrap">
+          <div class="sidebar-card">
+            <div class="sidebar-title">⚡ 推荐搭配高速专线</div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">配合高品质 IPLC 专线，彻底告别小火箭断流与连接超时：</p>
+            <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:6px;">极光云 (Aurora) 专线</div>
+            <div class="coupon-box" style="margin-bottom:12px;">
+              <code class="coupon-code">SPEEDLAB80</code>
+              <button class="btn-copy-coupon" onclick="copyCoupon('SPEEDLAB80', this)">复制8折</button>
+            </div>
+            <a href="https://example.com/go/aurora" target="_blank" rel="sponsored nofollow" class="btn btn-primary" style="width:100%;">直达官网订阅</a>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-title">📚 更多相关教程</div>
+            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:8px; font-size:0.85rem;">
+              <li><a href="clash-verge-tutorial.html" style="color:var(--text-muted);">💻 Clash Verge Rev 电脑端配置 →</a></li>
+              <li><a href="../protocols/iplc-vs-iepl-guide.html" style="color:var(--text-muted);">🔬 IPLC 专线为什么比直连稳？ →</a></li>
+              <li><a href="../troubleshooting/node-timeout-fix.html" style="color:var(--text-muted);">🛠️ 订阅更新失败紧急排错 →</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom-inner" style="padding: 24px 0;">
+      <p class="copyright-text">© 2026 SPEEDLAB. 本教程仅供网络性能技术交流参考。</p>
+      <a href="../../about/index.html" class="footnote-link">免责声明</a>
+    </div>
+  </footer>
+
+  <div class="toast-notice" id="toastNotice">优惠码已复制！</div>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

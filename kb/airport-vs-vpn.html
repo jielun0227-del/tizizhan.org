@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>机场和 VPN 有什么区别？协议、客户端与隐私责任一次讲清 | 梯子指南</title>
+  <meta name="description" content="比较商业机场订阅与传统 VPN 服务的网络模式、客户端配置、隐私信任和选购要点：深入解析代理协议与虚拟专用网的工作原理及使用场景。">
+  <meta name="keywords" content="机场和VPN区别, 代理协议, VPN原理, 科学上网, Clash与VPN">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <div class="container header-row">
+      <a href="../index.html" class="site-brand"><span class="brand-glyph">◈</span><span>梯子指南</span></a>
+      <nav class="site-nav">
+        <a href="../index.html#recommended" class="nav-link">推荐机场</a>
+        <a href="index.html" class="nav-link active">知识库</a>
+        <a href="../posts/index.html" class="nav-link">科普文章</a>
+        <a href="../faq/index.html" class="nav-link">机场 FAQ</a>
+        <a href="../coupons/index.html" class="nav-link">机场优惠券</a>
+        <a href="../about/index.html" class="nav-link">关于我们</a>
+      </nav>
+      <div class="header-status-box"><span class="patina-dot"></span><span>知识库</span></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="article-two-cols">
+      
+      <aside class="toc-aside">
+        <div class="toc-title">目录导航 // TOC</div>
+        <ul class="toc-list">
+          <li><a href="#core-definition">一、 根本定位：代理 (Proxy) vs 虚拟专用网 (VPN)</a></li>
+          <li><a href="#protocol-layer">二、 网络协议栈工作层级对比</a></li>
+          <li><a href="#routing-traffic">三、 智能分流与全局接管的体验分歧</a></li>
+          <li><a href="#speed-latency">四、 专线传输与直连线路的速度表现</a></li>
+          <li><a href="#selection-guide">五、 选购决策树：我究竟需要哪一种？</a></li>
+        </ul>
+      </aside>
+
+      <article class="content-body">
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-patina); margin-bottom:12px;">
+          <a href="../index.html">HOME</a> / <a href="index.html">KB</a> / <span>AIRPORT-VS-VPN</span>
+        </div>
+        <h1>机场和 VPN 有什么区别？协议、客户端与隐私责任一次讲清</h1>
+        <div style="display:flex; gap:16px; font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim); margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid var(--border-patina);">
+          <span>DATE: 2026-10-11</span>
+          <span>TAG: #网络科普 #协议对比</span>
+          <span>WORD COUNT: 约 1,120 字</span>
+        </div>
+
+        <p>
+          在讨论跨境科学上网时，“机场”和“VPN”这两个名词经常被混为一谈。很多新手往往认为它们是同一个概念的两种叫法。但事实上，从网络工程学、协议体系到运营架构，<strong>商业机场（应用层代理集群）</strong>与<strong>传统 VPN（网络层虚拟专用网）</strong>有着完全不同的技术底座与应用场景。本文带你一次性厘清两者的本质区别。
+        </p>
+
+        <h2 id="core-definition">一、 根本定位：代理 (Proxy) vs 虚拟专用网 (VPN)</h2>
+        <p>
+          <strong>传统商业 VPN（如 ExpressVPN、NordVPN、WireGuard、OpenVPN）：</strong><br>
+          最初是为跨地域企业内网互联或公共 Wi-Fi 加密设计的安全技术。其机制是在操作系统底层创建虚拟网卡（TAP/TUN），将整台设备的所有 IP 数据包全部打包、加密并通过单一隧道转发。其核心设计目标是<strong>“传输层绝对加密与全局隔离”</strong>，而非突破防火墙的智能伪装。
+        </p>
+        <p>
+          <strong>商业机场（Shadowsocks、VLESS、Trojan、Hysteria2）：</strong><br>
+          本质上是<strong>分布式代理服务器集群</strong>。它们针对国内特殊的国际出口网络特征深度优化，核心使命是<strong>“流量特征伪装与抗阻断穿透”</strong>，结合国内入口机房与海外专线（IPLC/IEPL），将特定域名的网络请求经由低延迟骨干通道智能中转。
+        </p>
+
+        <h2 id="protocol-layer">二、 网络协议栈工作层级对比</h2>
+        <div class="data-table-container" style="margin:18px 0;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>对比维度</th>
+                <th>传统 VPN (如 OpenVPN / WireGuard)</th>
+                <th>现代机场 (VLESS / Trojan / Hysteria2)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>工作网络层级</strong></td>
+                <td>网络层 (Layer 3) 或数据链路层 (Layer 2)</td>
+                <td>传输层 / 应用层 (Layer 4 / Layer 7)</td>
+              </tr>
+              <tr>
+                <td><strong>流量特征</strong></td>
+                <td>强特征加密封装，握手包极易被防火墙深度报文检测 (DPI) 识别并封锁</td>
+                <td>伪装为标准 HTTPS 流量（TLS 1.3 + ALPN），外表与普通网站访问完全一致</td>
+              </tr>
+              <tr>
+                <td><strong>分流能力</strong></td>
+                <td>默认全局接管整机流量，国内应用同步减速</td>
+                <td>支持基于域名、IP-CIDR 和进程的毫秒级智能规则分流</td>
+              </tr>
+              <tr>
+                <td><strong>跨境传输链路</strong></td>
+                <td>公网直连（易受晚高峰国际出口拥堵影响）</td>
+                <td>多采用国内 BGP 入口 + 跨境内网专线（IPLC/IEPL）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="routing-traffic">三、 智能分流与全局接管的体验分歧</h2>
+        <p>
+          在日常使用体验上，两者最大的差别体现在<strong>路由规则（Routing Rules）</strong>上：
+        </p>
+        <ul>
+          <li><strong>使用 VPN 时：</strong> 打开微信、淘宝、网易云音乐等国内应用时，流量同样被强制绕道海外，导致国内应用加载迟缓、甚至弹出“异地登录/海外 IP 风险预警”。</li>
+          <li><strong>使用机场客户端（Clash / Shadowrocket / Sing-box）时：</strong> 客户端通过内置的 GeoIP 与规则集，自动识别国内网站直接直连、仅有 Google、YouTube、GitHub 等海外域名才走代理，真正做到<strong>“无感科学上网”</strong>。</li>
+        </ul>
+
+        <h2 id="speed-latency">四、 专线传输与直连线路的速度表现</h2>
+        <p>
+          为什么很多人觉得传统国际 VPN “卡、慢、晚高峰连不上”，而机场专线却能跑满千兆 4K？
+        </p>
+        <blockquote>
+          <strong>⚡ 关键在物理路由：</strong> 传统 VPN 依赖普通的公网国际互联网互联（163 骨干网），在每晚 20:00~23:00 晚高峰面临极高的国际出口丢包（常达 15%~30%）；而优质商业机场通常采购了运营商企业级 <strong>IPLC 物理内网专线</strong>，数据在国内机房直接走光纤专网直达香港/日本机房，完全不经过公网国际海缆出口，因此丢包率能常年稳定在 0.1% 以下。
+        </blockquote>
+
+        <h2 id="selection-guide">五、 选购决策树：我究竟需要哪一种？</h2>
+        <p>根据你的实际核心诉求，对号入座即可：</p>
+        <ol>
+          <li><strong>选择现代专线机场：</strong> 适合日常高频跨境浏览、观看 YouTube 4K/8K 视频、畅玩 Steam/PS5 外服低延迟联机游戏、以及日常高频与 ChatGPT / Claude 对话的生产力用户。兼顾低延迟、智能分流与高性价比。</li>
+          <li><strong>选择企业级 VPN：</strong> 适合跨国公司员工访问公司总部内部局域网资产（如内网 ERP、Git 私有仓库），或对端到端物理加密有法务合规强要求的企业用户。</li>
+        </ol>
+        <p style="margin-top:20px;">
+          总结而言，对于绝大多数追求<strong>高速、稳定、低延迟以及顺畅日常体验</strong>的个人用户，采用现代协议与专线架构的商业机场是更成熟、高效的解决方案。
+        </p>
+
+      </article>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>© 2026 梯子指南. 知识库网络工程规范文档.</div>
+      <a href="index.html" style="color:var(--accent-verdigris);">返回知识库目录 →</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

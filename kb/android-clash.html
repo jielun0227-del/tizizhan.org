@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>安卓翻墙必备工具：Clash Meta for Android 与分流配置避坑全书 | 梯子指南</title>
+  <meta name="description" content="安卓翻墙客户端深度教程：Clash Meta for Android 安装配置、订阅地址更新失败排错、绕过大陆应用分流与游戏低延迟模式调优指南。">
+  <meta name="keywords" content="安卓翻墙, Clash安卓版, Clash Meta Android, 安卓科学上网, 订阅地址">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <div class="container header-row">
+      <a href="../index.html" class="site-brand"><span class="brand-glyph">◈</span><span>梯子指南</span></a>
+      <nav class="site-nav">
+        <a href="../index.html#recommended" class="nav-link">推荐机场</a>
+        <a href="index.html" class="nav-link active">知识库</a>
+        <a href="../posts/index.html" class="nav-link">科普文章</a>
+        <a href="../faq/index.html" class="nav-link">机场 FAQ</a>
+        <a href="../coupons/index.html" class="nav-link">机场优惠券</a>
+        <a href="../about/index.html" class="nav-link">关于我们</a>
+      </nav>
+      <div class="header-status-box"><span class="patina-dot"></span><span>安卓知识库</span></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="article-two-cols">
+      
+      <aside class="toc-aside">
+        <div class="toc-title">目录导航 // TOC</div>
+        <ul class="toc-list">
+          <li><a href="#android-tools">一、 安卓客户端选型指南</a></li>
+          <li><a href="#install-cmfa">二、 安装与系统后台保活</a></li>
+          <li><a href="#sub-manage">三、 订阅链接导入与配置</a></li>
+          <li><a href="#app-bypass">四、 应用绕行分流设置</a></li>
+          <li><a href="#battery-fix">五、 电池优化与断流解决</a></li>
+          <li><a href="#error-faq">六、 常见报错与排错自检</a></li>
+        </ul>
+      </aside>
+
+      <article class="content-body">
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-patina); margin-bottom:12px;">
+          <a href="../index.html">HOME</a> / <a href="index.html">KB</a> / <span>ANDROID-CLASH-TUTORIAL</span>
+        </div>
+        <h1>安卓翻墙必备工具：Clash Meta for Android 与分流配置避坑全书</h1>
+        <div style="display:flex; gap:16px; font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim); margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid var(--border-patina);">
+          <span>DATE: 2026-10-11</span>
+          <span>TAG: #安卓翻墙</span>
+          <span>WORD COUNT: 约 1,280 字</span>
+        </div>
+
+        <h2 id="android-tools">一、 2026 安卓翻墙客户端生态选型</h2>
+        <p>
+          在 Android 开放生态中，虽然可供选择的代理工具繁多（如 v2rayNG、SagerNet、Matsuri 等），但目前功能最强大、分流逻辑最成熟的依然是基于开源 Meta 内核的 <strong>Clash Meta for Android (CMFA)</strong>。
+        </p>
+        <p>
+          相比传统的原版 Clash for Android (CFA)，CMFA 具备完整的 <strong>Mihomo 内核支持</strong>，能够原生解析 Hysteria2、VLESS Reality 等新一代抗封锁协议，并且具备更强大的规则引擎与更低的待机功耗。
+        </p>
+
+        <h2 id="install-cmfa">二、 正确下载与国产定制系统后台保活</h2>
+        <p>
+          请认准 GitHub 开源项目发布页下载 <code>.apk</code> 安装包。针对小米 MIUI/HyperOS、华为 HarmonyOS、OPPO ColorOS 与 vivo OriginOS，国内定制安卓系统对后台进程的杀戮极其激进，安装后必须完成以下三步保活：
+        </p>
+        <ol>
+          <li><strong>电池策略：</strong> 进入系统“应用信息-省电策略”，将“智能省电”修改为<strong>“无限制”</strong>；</li>
+          <li><strong>自启动权限：</strong> 允许 Clash Meta 应用“自启动”与“关联启动”；</li>
+          <li><strong>后台任务加锁：</strong> 在多任务切换界面，长按 Clash 卡片点击小锁图标完成常驻锁定。</li>
+        </ol>
+
+        <h2 id="sub-manage">三、 订阅链接导入步骤</h2>
+        <ol>
+          <li>打开 Clash Meta for Android，点击主界面的 <strong>“配置 (Profiles)”</strong>；</li>
+          <li>点击右上角 <code>+</code> 号，选择 <strong>“从 URL 导入”</strong>；</li>
+          <li>在“URL”一栏中粘贴机场后台提供的通用订阅链接，名称填写对应机场名称；</li>
+          <li>将“自动更新”间隔设置为 <code>1440</code> 分钟（每日自动刷新一次，避免因节点 IP 变动导致连接失败）；</li>
+          <li>点击右上角保存图标，软件将自动下载配置文件并解析节点。</li>
+        </ol>
+
+        <!-- Internal Recommend Slot -->
+        <div class="internal-recommend-slot">
+          <div class="slot-text-group">
+            <div class="slot-heading">💡 遇到安卓连上无网络或提示 Handshake Timeout？</div>
+            <div class="slot-desc">移动基站网络对公网中转干扰极强。推荐使用配备多线 BGP 自动容灾入口的企业级专线。</div>
+          </div>
+          <a href="../index.html#recommended" class="btn-ancient btn-primary-bronze" style="white-space:nowrap;">
+            查看本站精选稳定专线机场推荐 →
+          </a>
+        </div>
+
+        <h2 id="app-bypass">四、 应用绕行分流设置（彻底告别国内应用异常）</h2>
+        <p>
+          许多安卓用户抱怨：开启代理后，微信视频通话变卡、美团定位跑到香港、网银无法登录。这是因为未开启<strong>“应用分流绕行”</strong>。
+        </p>
+        <p>
+          在 Clash Meta 设置中找到 <strong>“网络-访问控制 (Access Control)”</strong>：
+        </p>
+        <ul>
+          <li><strong>仅代理所选应用 (Whitelist 模式)：</strong> 勾选 Chrome、YouTube、Telegram、Twitter、ChatGPT、Gmail、Netflix 等国外软件，其余国内微信、支付宝、淘宝强行走直连。这是最省电、最安全的配置方式；</li>
+          <li><strong>排除所选应用 (Blacklist 模式)：</strong> 勾选国内全部银行、网购及政务软件，让其永远不走代理网卡。</li>
+        </ul>
+
+        <h2 id="battery-fix">五、 为什么息屏后容易断流？排查核心原因</h2>
+        <p>
+          在移动端，当屏幕熄灭 5 分钟后，安卓系统的 Doze 深度休眠模式会切断非前台应用的唤醒锁。
+        </p>
+        <p>
+          若频繁出现熄屏后断流，请在 Clash Meta 的“高级设置”中开启 <strong>“启用常驻通知栏 (Foreground Notification)”</strong>。前台常驻服务具备系统最高优先级，可以确保跨基站切换和息屏待机时不被 Android 内存管理器强制杀死。
+        </p>
+
+        <h2 id="error-faq">六、 常见报错自检清单</h2>
+        <p>
+          <strong>1. 打开开关提示“无法创建 VPN 隧道”？</strong><br>
+          检查是否有第三方“手机管家”或“安全防护软件”禁止了系统 VPN 接口调用，将其卸载或解除限制即可。
+        </p>
+        <p>
+          <strong>2. 微信朋友圈图片无法加载？</strong><br>
+          在配置规则中检查 DNS 解析模式，将本地 DNS 设置为运营商 DNS 或 223.5.5.5，并开启 Fake-IP 模式以加速解析。
+        </p>
+      </article>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>© 2026 梯子指南. 安卓客户端配置全解.</div>
+      <a href="../index.html#recommended" style="color:var(--accent-verdigris);">精选稳定专线推荐 →</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

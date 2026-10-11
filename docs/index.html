@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网络技术知识库与客户端全套配置教程 (2026 Wiki) | SPEEDLAB</title>
+  <meta name="description" content="包含 Shadowrocket、Clash Verge Rev、Sing-box、Surge 全平台客户端配置教程，IPLC/IEPL 专线原理科普，以及节点超时、DNS污染排错方案。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">
+          <span class="logo-title">SPEED<span class="gradient-text">LAB</span></span>
+          <span class="logo-subtitle">极客机场测速实验室</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="../index.html" class="nav-link">首页</a>
+        <a href="../reviews/index.html" class="nav-link">机场评测</a>
+        <a href="index.html" class="nav-link active">配置教程 & 知识库</a>
+        <a href="../faq/index.html" class="nav-link">避坑 FAQ</a>
+        <a href="../about/index.html" class="nav-link">关于 & 评测标准</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="article-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="../index.html">首页</a> <span>/</span> <span>技术知识库 (Wiki)</span>
+      </div>
+      <h1 class="article-title">网络加速知识库、客户端教程与排错中心</h1>
+      <p class="section-desc" style="max-width: 800px;">
+        从零基础客户端安装配置，到前沿代理协议原理解读与连接故障排查。助力用户打造高可用出海网络，同时吸收长尾技术搜索流量。
+      </p>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container">
+      
+      <!-- Category 1: Client Tutorials -->
+      <div style="margin-bottom: 56px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+          <span style="font-size: 1.8rem;">📱</span>
+          <div>
+            <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 4px;">全平台客户端零基础配置教程</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">涵盖 iOS、Windows、macOS、Android 主流代理软件新手指南</p>
+          </div>
+        </div>
+
+        <div class="tutorials-grid">
+          <div class="tutorial-card">
+            <div class="tut-icon">🚀</div>
+            <div class="tut-content">
+              <span class="tut-category">iOS (iPhone / iPad)</span>
+              <h3 class="tut-title"><a href="tutorials/shadowrocket-guide.html">2026 最新 Shadowrocket (小火箭) 零基础新手导入与分流规则配置教程</a></h3>
+              <p class="tut-desc">教你正确下载美区小火箭，一键订阅及手动节点导入、规则模式分流与 ChatGPT 避坑设置。</p>
+              <div class="tut-meta"><span>更新于 2026-10</span> <span>阅读量 4.8w</span></div>
+            </div>
+          </div>
+
+          <div class="tutorial-card">
+            <div class="tut-icon">💻</div>
+            <div class="tut-content">
+              <span class="tut-category">Windows & macOS</span>
+              <h3 class="tut-title"><a href="tutorials/clash-verge-tutorial.html">Clash Verge Rev 零基础实战：Meta/Mihomo 内核与 TUN 虚拟网卡配置</a></h3>
+              <p class="tut-desc">告别已废弃的 Clash for Windows，拥抱新一代跨平台客户端，解决本地 DNS 泄露与网卡冲突。</p>
+              <div class="tut-meta"><span>更新于 2026-10</span> <span>阅读量 3.9w</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 2: Protocols & Technical Deep Dive -->
+      <div style="margin-bottom: 56px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+          <span style="font-size: 1.8rem;">🔬</span>
+          <div>
+            <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 4px;">协议科普与网络技术深度解析</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">揭秘跨境骨干网、IPLC/IEPL 物理专线与新一代 UDP 协议</p>
+          </div>
+        </div>
+
+        <div class="tutorials-grid">
+          <div class="tutorial-card">
+            <div class="tut-icon">⚡</div>
+            <div class="tut-content">
+              <span class="tut-category">物理专线 vs 公网中继</span>
+              <h3 class="tut-title"><a href="protocols/iplc-vs-iepl-guide.html">为什么你的梯子晚高峰总卡顿？从 IPLC 专线与普通 BGP/公网中继的技术原理说起</a></h3>
+              <p class="tut-desc">剖析晚高峰骨干网 QoS 限速机制与 TCP 拥塞重传，详尽数据表格对比延迟、抗封锁能力与成本。</p>
+              <div class="tut-meta"><span>长文精读</span> <span>技术硬核</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 3: Troubleshooting -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+          <span style="font-size: 1.8rem;">🛠️</span>
+          <div>
+            <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 4px;">故障排错 (Troubleshooting)</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">针对“节点超时”、“订阅更新失败”与“DNS 污染”高频搜索解答</p>
+          </div>
+        </div>
+
+        <div class="tutorials-grid">
+          <div class="tutorial-card">
+            <div class="tut-icon">🔍</div>
+            <div class="tut-content">
+              <span class="tut-category">紧急救治清单</span>
+              <h3 class="tut-title"><a href="troubleshooting/node-timeout-fix.html">节点全部超时、Ping 通但打不开网页？排查本地 DNS 污染与订阅无法刷新指南</a></h3>
+              <p class="tut-desc">系统时间偏差矫正、防火墙放行策略与安全可靠公共 DNS 配置（1.1.1.1 与 8.8.8.8）。</p>
+              <div class="tut-meta"><span>5 步排查清单</span> <span>快速解决</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom-inner" style="padding: 24px 0;">
+      <p class="copyright-text">© 2026 SPEEDLAB. 知识库文章遵循客观中立技术原则编写。</p>
+      <a href="../about/index.html" class="footnote-link">关于知识库与免责声明</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

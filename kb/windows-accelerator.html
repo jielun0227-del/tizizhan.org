@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows加速器配置教程：Clash Verge Rev 内存占用优化与 TUN 虚拟网卡实战 | 梯子指南</title>
+  <meta name="description" content="Windows加速器专业配置长文：手把手教你正确安装配置 Clash Verge Rev、开启 TUN 虚拟网卡接管全局流量、解决 Windows 下 DNS 污染与网卡冲突，并内置优质专线节点选购指南。">
+  <meta name="keywords" content="Windows加速器, Clash Verge教程, TUN模式, Windows翻墙客户端, Clash内存优化">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <div class="container header-row">
+      <a href="../index.html" class="site-brand"><span class="brand-glyph">◈</span><span>梯子指南</span></a>
+      <nav class="site-nav">
+        <a href="../index.html#recommended" class="nav-link">推荐机场</a>
+        <a href="index.html" class="nav-link active">知识库</a>
+        <a href="../posts/index.html" class="nav-link">科普文章</a>
+        <a href="../faq/index.html" class="nav-link">机场 FAQ</a>
+        <a href="../coupons/index.html" class="nav-link">机场优惠券</a>
+        <a href="../about/index.html" class="nav-link">关于我们</a>
+      </nav>
+      <div class="header-status-box"><span class="patina-dot"></span><span>知识库深度长文</span></div>
+    </div>
+  </header>
+
+  <!-- Article Layout with TOC -->
+  <div class="container">
+    <div class="article-two-cols">
+      
+      <!-- Sticky TOC Aside -->
+      <aside class="toc-aside">
+        <div class="toc-title">目录导航 // TOC</div>
+        <ul class="toc-list">
+          <li><a href="#overview">一、 为什么选 Clash Verge Rev</a></li>
+          <li><a href="#install">二、 正确下载与安装避坑</a></li>
+          <li><a href="#subscription">三、 订阅链接导入步骤</a></li>
+          <li><a href="#tun-mode">四、 TUN 虚拟网卡深度配置</a></li>
+          <li><a href="#rules">五、 策略组选择与分流</a></li>
+          <li><a href="#troubleshooting">六、 常见报错与排查清单</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Long Article Content (1200+ words) -->
+      <article class="content-body">
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-patina); margin-bottom:12px;">
+          <a href="../index.html">HOME</a> / <a href="index.html">KB</a> / <span>WINDOWS-ACCELERATOR-SPEC</span>
+        </div>
+        <h1>Windows加速器配置教程：Clash Verge Rev 内存优化与 TUN 虚拟网卡实战</h1>
+        <div style="display:flex; gap:16px; font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim); margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid var(--border-patina);">
+          <span>DATE: 2026-10-11</span>
+          <span>TAG: #Windows加速器</span>
+          <span>WORD COUNT: 约 1,350 字</span>
+        </div>
+
+        <h2 id="overview">一、 为什么淘汰旧版，选择 Clash Verge Rev？</h2>
+        <p>
+          在 Windows 操作系统上，许多初学者曾经使用过 Clash for Windows (CFW)。但由于众所周知的原因，CFW 核心作者已于两年前停更并注销仓库。继续使用旧版不仅存在严重的内存泄漏问题（长时间运行占用 500MB+ 内存），还存在安全漏洞与协议支持落后的风险。
+        </p>
+        <p>
+          <strong>Clash Verge Rev</strong> 是目前 Windows 平台最主流的开源继任者。它基于轻量的 Tauri 框架重构，UI 渲染内存占用减少了 70% 以上，并原生内置了下一代 <strong>Mihomo (Clash.Meta)</strong> 高性能内核，完美支持 VLESS、Hysteria2、TUIC、Trojan 以及规则脚本集。无论你是用来查阅学术资料、玩海外游戏加速，还是办公使用 OpenAI ChatGPT，它都是当下 Windows 加速器的最优解。
+        </p>
+
+        <h2 id="install">二、 正确下载与安装避坑指南</h2>
+        <p>
+          请务必从 GitHub 官方 Releases 仓库（<code>clash-verge-rev/clash-verge-rev</code>）下载正版安装包，切勿在百度搜索下载带有第三方推广捆绑木马的李鬼安装包。
+        </p>
+        <ul>
+          <li><strong>64位普通电脑：</strong> 下载 <code>Clash.Verge_x.x.x_x64_setup.exe</code> 安装程序；</li>
+          <li><strong>ARM架构笔记本（如高通骁龙芯片）：</strong> 下载对应 <code>arm64_setup.exe</code>；</li>
+          <li><strong>安装避坑：</strong> 强烈建议安装路径保持纯英文字符，避免因为中文路径导致内核读写配置文件异常报错。</li>
+        </ul>
+
+        <h2 id="subscription">三、 订阅链接导入步骤</h2>
+        <p>
+          安装完成后双击启动，在左侧导航栏点击 <strong>“订阅 (Subscriptions)”</strong>：
+        </p>
+        <ol>
+          <li>在顶部输入框中，粘贴你从机场后台复制的专属订阅链接；</li>
+          <li>点击右侧的 <strong>“导入 (Import)”</strong> 按钮；</li>
+          <li>软件将自动拉取远程配置。导入成功后，右键点击该订阅卡片，勾选“使用 (Use)”，此时配置文件即在本地生效。</li>
+        </ol>
+
+        <!-- Internal Conversion Slot Box (Required by Spec) -->
+        <div class="internal-recommend-slot">
+          <div class="slot-text-group">
+            <div class="slot-heading">💡 没有可用节点或订阅拉取失败？</div>
+            <div class="slot-desc">优质客户端需配合高品质专线才能发挥实力。晚高峰骨干网拥堵时，推荐选用全内网物理专线节点。</div>
+          </div>
+          <a href="../index.html#recommended" class="btn-ancient btn-primary-bronze" style="white-space:nowrap;">
+            查看本站精选稳定专线机场推荐 →
+          </a>
+        </div>
+
+        <h2 id="tun-mode">四、 TUN 虚拟网卡深度配置（解决软件不走代理）</h2>
+        <p>
+          传统的“系统代理 (System Proxy)”模式只能代理支持系统代理接口的浏览器流量，对于 Windows 命令行 CMD、PowerShell、Git 终端，以及部分大型游戏客户端，系统代理完全失效。
+        </p>
+        <p>
+          解决此痛点的终极方案是开启 <strong>TUN 模式 (虚拟网卡接管)</strong>：
+        </p>
+        <ol>
+          <li>进入 Clash Verge Rev 的 <strong>“设置 (Settings)”</strong> 页面；</li>
+          <li>找到 <strong>“TUN 模式”</strong> 选项，初次开启会提示需要安装服务模式（Service Mode），点击授权以管理员权限安装；</li>
+          <li>安装完成后开启 TUN 开关。此时系统会在虚拟网卡层接管全部 TCP/UDP 流量，无论是游戏还是终端代码拉取，均可直接秒级穿透，彻底解决本地 DNS 污染问题。</li>
+        </ol>
+
+        <h2 id="rules">五、 策略组选择与核心分流设置</h2>
+        <p>
+          进入左侧 <strong>“代理 (Proxies)”</strong> 页面，你将看到策略组列表：
+        </p>
+        <ul>
+          <li><strong>规则模式 (Rule)：</strong> 最推荐的日常模式。访问国内网站直连，访问国外受限服务自动匹配代理；</li>
+          <li><strong>节点挑选：</strong> 对于 ChatGPT 和 Claude 推荐选择美国（US）或日本（JP）的原生住宅节点；对于日常网页和 4K 视频推荐选择香港（HK）或新加坡（SG）专线；</li>
+          <li><strong>延迟测试：</strong> 点击右上角闪电图标可一键批量测速，挑选延迟在 30ms 以内且无丢包的绿色节点。</li>
+        </ul>
+
+        <h2 id="troubleshooting">六、 常见报错与排查清单</h2>
+        <p>
+          <strong>1. 提示 “Connect: connection refused”？</strong><br>
+          通常是因为端口冲突。检查是否有其他加速器或旧版 Clash 正在占用 7890 端口。在设置中将混合端口修改为 7895 即可解决。
+        </p>
+        <p>
+          <strong>2. 打开后国内微信、网银无法连接？</strong><br>
+          检查是否误开成了“全局 (Global)”模式。切换回“规则 (Rule)”模式，并确保配置规则中包含 <code>GEOIP, CN, DIRECT</code> 国内直连规则。
+        </p>
+        <p>
+          <strong>3. 节点全部 Timeout 无法测速？</strong><br>
+          按 Win+R 输入 <code>cmd</code>，执行 <code>w32tm /resync</code> 强制同步系统时间。时间偏差超过 90 秒会导致 TLS 握手全面失败。
+        </p>
+
+      </article>
+
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>© 2026 梯子指南. 遵循中立技术评测准则.</div>
+      <a href="../index.html#recommended" style="color:var(--accent-verdigris);">精选高速专线推荐 →</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

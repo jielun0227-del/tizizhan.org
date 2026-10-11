@@ -1,0 +1,23 @@
+# robots.txt — 梯子指南 (tizizhan.org)
+# Generated: 2026-10-11
+
+User-agent: *
+Allow: /
+
+# 允许爬取所有核心内容页面
+Allow: /index.html
+Allow: /ai-tools/
+Allow: /kb/
+Allow: /posts/
+Allow: /faq/
+Allow: /coupons/
+Allow: /reviews/
+Allow: /docs/
+Allow: /about/
+Allow: /privacy/
+
+# 禁止爬取静态资源目录（无 SEO 价值）
+Disallow: /assets/
+
+# Sitemap 位置
+Sitemap: https://tizizhan.org/sitemap.xml
