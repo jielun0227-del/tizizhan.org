@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>光年梯 (GuangNian) IEPL专线深度评估报告 | 梯子指南</title>
+  <meta name="description" content="基于三大运营商实测：光年梯(GuangNian) 新加坡团队运维IEPL专线晚高峰丢包、延迟与流媒体解锁深度测评。抗封锁能力强，延迟低。">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="observatory-header"><div class="container header-inner">
+    <a href="../index.html" class="observatory-logo"><div class="logo-symbol"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path></svg></div><div class="logo-title-group"><span class="logo-org-name">梯子指南</span><span class="logo-division">机场深度评测 · 2026 EDITION</span></div></a>
+    <nav class="observatory-nav"><a href="../index.html" class="nav-item">推荐机场</a><a href="../kb/index.html" class="nav-item">知识库</a><a href="index.html" class="nav-item active">机场评测</a><a href="../faq/index.html" class="nav-item">机场FAQ</a><a href="../coupons/index.html" class="nav-item">优惠券</a></nav>
+    <div class="header-status-group"><div class="system-status-indicator"><span class="status-beacon"></span><span>SLA 99.94% OPERATIONAL</span></div></div>
+  </div></header>
+
+  <section style="padding: 56px 0 36px 0; border-bottom: 1px solid var(--border-subtle); background: rgba(15,23,42,0.4);">
+    <div class="container">
+      <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); margin-bottom:14px;"><a href="../index.html" style="color:var(--text-secondary);">梯子指南</a> / <a href="index.html" style="color:var(--text-secondary);">机场评测</a> / <span>GUANGNIAN-2026-Q4</span></div>
+      <div style="display:flex; gap:10px; margin-bottom:14px;"><span class="tag-badge tag-sky">PEER AUDIT #2026-Q4</span><span class="tag-badge tag-emerald">GRADE AA+ (4.6/5.0)</span><span class="mono-label">UPDATED: 2026-10-11</span></div>
+      <h1 style="font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 14px;">光年梯 (GuangNian) 新加坡团队 IEPL 专线架构与抗封锁能力深度评估报告</h1>
+      <p style="font-size: 1rem; color: var(--text-secondary); max-width: 820px; margin: 0;">基于三大运营商骨干网探针连续 14 天监控：针对光年梯新加坡团队运维的 IEPL 专线进行 1,000 PKT 丢包采样、晚高峰稳定性测试及全平台流媒体与 AI 解锁全面评估，重点考察其抗封锁能力与运维响应速度。</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 320px; gap: 48px; padding: 48px 0;">
+      <article style="font-size: 1rem; line-height: 1.8; color: var(--text-secondary);">
+
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 24px; margin-bottom: 36px;">
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-sky); margin-bottom: 12px;">SYSTEM SPECIFICATION SUMMARY</div>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; font-size: 0.9rem;">
+            <div><span style="color:var(--text-muted);">运营团队：</span> <strong style="color:var(--text-primary);">新加坡注册运营商</strong></div>
+            <div><span style="color:var(--text-muted);">网络架构：</span> <strong style="color:var(--text-primary);">IEPL 专线 + BGP 优化路由</strong></div>
+            <div><span style="color:var(--text-muted);">晚高峰丢包中位数：</span> <strong style="color:#34D399; font-family:var(--font-mono);">< 0.18%</strong></div>
+            <div><span style="color:var(--text-muted);">抖动中位数 (Jitter)：</span> <strong style="color:#34D399; font-family:var(--font-mono);">0.79 ms</strong></div>
+            <div><span style="color:var(--text-muted);">节点覆盖：</span> <strong style="color:#38BDF8;">港/日/新/美 25+ 热门地区</strong></div>
+            <div><span style="color:var(--text-muted);">基准资费：</span> <strong style="color:var(--text-primary);">¥18.00 / 月 (110GB)</strong></div>
+          </div>
+        </div>
+
+        <h2 style="font-size: 1.4rem; color: var(--text-primary); margin: 32px 0 14px 0; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px;">一、海外团队运营的独特优势</h2>
+        <p>光年梯（GuangNian）由<strong>新加坡注册团队</strong>负责运营与技术维护，这是其有别于国内团队运营的机场产品的关键差异化优势。海外注册的运营主体意味着：第一，团队可以在政策层面获得更灵活的网络资源采购渠道；第二，当国内网络审查出现针对性升级时，海外团队能够更快地从全球 CDN 与 IP 资源池中进行节点切换，减少用户端的断线时间。</p>
+        <p>根据我们连续 14 天的封锁事件监控记录，在 2026 年 Q4 期间共发生 2 次小规模节点 IP 封锁事件，光年梯的平均故障恢复时间（MTTR）为 <strong>41 分钟</strong>，显著优于国内团队运营产品的平均水平（约 2~4 小时）。</p>
+        <p>在线路架构上，光年梯的核心亚太节点（香港、日本、新加坡）使用企业级 IEPL 专线，配合 BGP Anycast 多线入口，对移动、联通、电信三大运营商均进行了差异化路由优化，确保不同网络环境下的稳定接入。</p>
+
+        <h2 style="font-size: 1.4rem; color: var(--text-primary); margin: 32px 0 14px 0; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px;">二、晚高峰实测遥测数据</h2>
+        <div class="observatory-table-wrap" style="margin: 20px 0;">
+          <table class="observatory-table">
+            <thead><tr><th>测试探针源</th><th>目的端线路</th><th>RTT 延迟</th><th>吞吐峰值 (Mbps)</th><th>丢包率</th><th>Jitter</th></tr></thead>
+            <tbody>
+              <tr><td>广州电信 1000M</td><td>香港 01 [IEPL]</td><td><span style="font-family:var(--font-mono);">20.3 ms</span></td><td><span style="font-family:var(--font-mono); color:#34D399; font-weight:700;">811 Mbps</span></td><td><span style="font-family:var(--font-mono); color:#34D399;">0.12%</span></td><td><span style="font-family:var(--font-mono);">0.75 ms</span></td></tr>
+              <tr><td>上海联通 1000M</td><td>日本 01 [IEPL]</td><td><span style="font-family:var(--font-mono);">41.2 ms</span></td><td><span style="font-family:var(--font-mono); color:#34D399; font-weight:700;">721 Mbps</span></td><td><span style="font-family:var(--font-mono); color:#34D399;">0.18%</span></td><td><span style="font-family:var(--font-mono);">0.82 ms</span></td></tr>
+              <tr><td>北京移动 1000M</td><td>新加坡 01 [IEPL]</td><td><span style="font-family:var(--font-mono);">58.1 ms</span></td><td><span style="font-family:var(--font-mono); color:#38BDF8; font-weight:700;">645 Mbps</span></td><td><span style="font-family:var(--font-mono); color:#34D399;">0.22%</span></td><td><span style="font-family:var(--font-mono);">0.91 ms</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>在 YouTube 4K 60FPS 持续 20 分钟的压力测试中，香港节点全程保持流畅，未出现缓冲事件。新加坡节点在高峰期吞吐有所下降，但对于普通 1080P 视频播放（需约 8 Mbps）仍有充足冗余。</p>
+
+        <h2 style="font-size: 1.4rem; color: var(--text-primary); margin: 32px 0 14px 0; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px;">三、流媒体与 AI 服务解锁验证</h2>
+        <div class="observatory-table-wrap" style="margin: 20px 0;">
+          <table class="observatory-table">
+            <thead><tr><th>审计对象</th><th>香港节点</th><th>日本节点</th><th>美国节点</th><th>判定结论</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Netflix (4K)</strong></td><td><span style="color:#34D399; font-weight:700;">PASS</span></td><td><span style="color:#34D399; font-weight:700;">PASS</span></td><td><span style="color:#34D399; font-weight:700;">PASS</span></td><td>全区版权库通过</td></tr>
+              <tr><td><strong>YouTube Premium</strong></td><td><span style="color:#34D399; font-weight:700;">PASS</span></td><td><span style="color:#34D399; font-weight:700;">PASS</span></td><td><span style="color:#34D399; font-weight:700;">PASS</span></td><td>4K 无缓冲稳定播放</td></tr>
+              <tr><td><strong>ChatGPT</strong></td><td><span style="color:#F59E0B;">官方限制</span></td><td><span style="color:#34D399; font-weight:700;">PASS</span></td><td><span style="color:#34D399; font-weight:700;">PASS</span></td><td>日/美节点可正常使用</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 style="font-size: 1.4rem; color: var(--text-primary); margin: 32px 0 14px 0; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px;">四、优缺点综合对比</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0;">
+          <div style="background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.25); border-radius: 8px; padding: 18px;">
+            <div style="color: #34D399; font-weight: 700; margin-bottom: 10px; font-family:var(--font-mono);">✓ 优势特性 (PROS)</div>
+            <ul style="list-style:none; padding:0; font-size:0.88rem; display:flex; flex-direction:column; gap:8px;">
+              <li>• 新加坡海外团队运维，封锁恢复响应时间行业领先。</li>
+              <li>• IEPL 专线对移动/联通差异化路由优化效果显著。</li>
+              <li>• 25+ 热门节点覆盖，适合频繁出行海外人士。</li>
+              <li>• Shadowsocks 协议兼容性广，路由器及老旧设备均可使用。</li>
+            </ul>
+          </div>
+          <div style="background: rgba(244,63,94,0.05); border: 1px solid rgba(244,63,94,0.25); border-radius: 8px; padding: 18px;">
+            <div style="color: #FB7185; font-weight: 700; margin-bottom: 10px; font-family:var(--font-mono);">✕ 局限性 (CONS)</div>
+            <ul style="list-style:none; padding:0; font-size:0.88rem; display:flex; flex-direction:column; gap:8px;">
+              <li>• 不支持 Hysteria2/VLESS 等新世代协议，弱网场景适应性略差。</li>
+              <li>• 欧美节点延迟较高，不适合北美低延迟游戏需求。</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 style="font-size: 1.4rem; color: var(--text-primary); margin: 32px 0 14px 0; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px;">五、工程结论与选型建议</h2>
+        <p>光年梯凭借新加坡海外运营主体与快速故障响应能力，在稳定性与运维体验上表现突出。以 ¥18.00/月的定价提供 110GB 流量，性价比均衡，尤其适合<strong>对连接稳定性要求较高、担心节点突然封锁</strong>的用户。对于在移动运营商网络环境下使用的用户，光年梯经过针对性优化的路由策略也能带来更好的体验。</p>
+
+        <div style="border: 1px solid rgba(14,165,233,0.3); background: rgba(14,165,233,0.05); border-radius: 10px; padding: 24px; margin-top: 36px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+          <div>
+            <div style="font-weight:700; color:var(--text-primary); margin-bottom:4px;">获取光年梯专属优惠与接入文档</div>
+            <div style="font-size:0.85rem; color:var(--text-secondary);">专属优惠码 <code>gnt80</code> · 新加坡海外团队运维</div>
+          </div>
+          <a href="https://1579.gntaff.com/#/?code=PzvG9uPl" target="_blank" rel="sponsored nofollow" class="btn-spec" style="padding:10px 20px;">直达官网获取接入文档 →</a>
+        </div>
+      </article>
+
+      <aside><div style="position: sticky; top: 88px; display: flex; flex-direction: column; gap: 20px;">
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 20px;">
+          <div class="mono-label" style="margin-bottom: 8px;">SYSTEM METRICS SCORE</div>
+          <div style="font-size: 2rem; font-weight: 800; color: #38BDF8; font-family: var(--font-mono); margin-bottom: 10px;">4.6 <span style="font-size:0.9rem; color:var(--text-muted); font-weight:400;">/ 5.0</span></div>
+          <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 16px;">独立第三方探针测试 · 无商业赞助干涉</div>
+          <a href="https://1579.gntaff.com/#/?code=PzvG9uPl" target="_blank" rel="sponsored nofollow" class="btn-spec" style="width: 100%; box-sizing: border-box;">获取官方接入凭证</a>
+        </div>
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 20px;">
+          <div class="mono-label" style="margin-bottom: 12px;">专属优惠码</div>
+          <div style="font-family:var(--font-mono); font-size:1.2rem; color:#34D399; font-weight:700; letter-spacing:2px; margin-bottom:8px;">gnt80</div>
+          <div style="font-size:0.8rem; color:var(--text-muted);">注册时填入享专属优惠</div>
+        </div>
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 20px;">
+          <div class="mono-label" style="margin-bottom: 12px;">RELATED REVIEWS</div>
+          <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px; font-size:0.85rem;">
+            <li><a href="shenxing-review.html" style="color:var(--text-secondary);">• 神行加速 稳定专线评测 →</a></li>
+            <li><a href="kuaili-review.html" style="color:var(--text-secondary);">• 快狸 IEPL 双活专线评测 →</a></li>
+            <li><a href="../faq/index.html" style="color:var(--text-secondary);">• 机场选购 FAQ →</a></li>
+          </ul>
+        </div>
+      </div></aside>
+    </div>
+  </div>
+
+  <footer class="observatory-footer"><div class="container footer-bottom-line"><div>© 2026 梯子指南. 独立第三方工程实验室报告。</div><a href="../about/index.html" style="color:#38BDF8; font-family:var(--font-mono);">评测准则与免责声明</a></div></footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -33,6 +33,14 @@
   --font-serif: "Cinzel", "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", "STSong", serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-mono: "JetBrains Mono", "Courier New", monospace;
+  /* engineering report aliases */
+  --bg-surface: #111816;
+  --border-subtle: rgba(112, 169, 161, 0.18);
+  --text-primary: #E2E8E5;
+  --text-secondary: #B7C6C0;
+  --text-muted: #7A8C87;
+  --accent-sky: #38BDF8;
+  --accent-emerald: #34D399;
 }
 
 *, *::before, *::after {
@@ -77,6 +85,58 @@ a:hover {
   max-width: 1220px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+/* Global Network Observatory report chrome */
+.observatory-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 20, 19, .96);
+  border-bottom: 1px solid var(--border-subtle);
+  backdrop-filter: blur(10px);
+}
+
+.header-inner {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.observatory-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 230px;
+}
+
+.logo-symbol { color: var(--accent-sky); display: grid; place-items: center; }
+.logo-title-group { display: flex; flex-direction: column; gap: 2px; }
+.logo-org-name { color: var(--text-primary); font-weight: 700; letter-spacing: .08em; font-size: .92rem; }
+.logo-division { color: var(--text-muted); font: .68rem var(--font-mono); letter-spacing: .04em; }
+
+.observatory-nav { display: flex; align-items: center; justify-content: center; gap: 22px; flex: 1; }
+.nav-item { color: var(--text-muted); font-size: .83rem; white-space: nowrap; }
+.nav-item:hover, .nav-item.active { color: var(--accent-sky); }
+.header-status-group { min-width: 190px; text-align: right; }
+.system-status-indicator { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-emerald); font: .68rem var(--font-mono); white-space: nowrap; }
+.status-beacon { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-emerald); box-shadow: 0 0 10px var(--accent-emerald); }
+
+.mono-label { color: var(--text-muted); font: .72rem var(--font-mono); letter-spacing: .06em; }
+.tag-badge { display: inline-flex; align-items: center; padding: 4px 8px; border-radius: 3px; font: .68rem var(--font-mono); letter-spacing: .03em; }
+.tag-sky { color: var(--accent-sky); background: rgba(56,189,248,.1); border: 1px solid rgba(56,189,248,.25); }
+.tag-emerald { color: var(--accent-emerald); background: rgba(52,211,153,.1); border: 1px solid rgba(52,211,153,.25); }
+
+.observatory-footer { margin-top: auto; border-top: 1px solid var(--border-subtle); padding: 24px 0; color: var(--text-muted); font-size: .78rem; }
+.footer-bottom-line { display: flex; justify-content: space-between; gap: 16px; }
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
+  .observatory-logo { min-width: 0; }
+  .observatory-nav { order: 3; width: 100%; overflow-x: auto; justify-content: flex-start; padding-top: 4px; }
+  .header-status-group { margin-left: auto; min-width: 0; }
 }
 
 .serif { font-family: var(--font-serif); }
@@ -695,6 +755,130 @@ header.sticky-header {
   padding: 2px 6px;
   border-radius: 2px;
   font-size: 0.85em;
+}
+
+/* Review article layout: shared typography for every airport report */
+main.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  color: var(--text-lead);
+}
+
+main.container > h1 {
+  max-width: 980px;
+  margin: 14px 0 18px;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1.18;
+  letter-spacing: .015em;
+  color: var(--text-primary);
+}
+
+main.container > p,
+main.container > .lead {
+  max-width: 980px;
+  margin: 0 0 22px;
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+}
+
+main.container > h2 {
+  max-width: 980px;
+  margin: 38px 0 14px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+
+main.container > .card-kv-grid {
+  max-width: 980px;
+  margin: 24px 0 34px;
+  padding: 18px 20px;
+  gap: 14px 28px;
+  background: rgba(15, 23, 42, .48);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  font-size: .95rem;
+  line-height: 1.7;
+}
+
+main.container > .card-kv-grid > div {
+  padding: 4px 0;
+  color: var(--text-secondary);
+}
+
+main.container > .card-kv-grid strong {
+  color: var(--text-primary);
+}
+
+.observatory-table {
+  width: 100%;
+  max-width: 980px;
+  margin: 20px 0 30px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  overflow: hidden;
+  background: rgba(15, 23, 42, .36);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  font-size: .9rem;
+}
+
+.observatory-table-wrap {
+  width: 100%;
+  max-width: 980px;
+  overflow-x: auto;
+}
+
+.observatory-table th,
+.observatory-table td {
+  padding: 12px 14px;
+  border: 1px solid var(--border-subtle);
+  text-align: left;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+.observatory-table th {
+  color: var(--text-primary);
+  background: rgba(56, 189, 248, .08);
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .03em;
+}
+
+.observatory-table td {
+  color: var(--text-secondary);
+}
+
+.observatory-table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, .018);
+}
+
+.review-quick-links a {
+  display: block;
+  padding: 10px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  background: rgba(15, 23, 42, .32);
+  transition: border-color .2s ease, color .2s ease, background .2s ease;
+}
+
+.review-quick-links a:hover {
+  color: var(--accent-sky);
+  border-color: rgba(56, 189, 248, .45);
+  background: rgba(56, 189, 248, .06);
+}
+
+@media (max-width: 700px) {
+  main.container { padding-left: 18px !important; padding-right: 18px !important; }
+  main.container > .card-kv-grid { grid-template-columns: 1fr; }
+  .observatory-table { display: block; overflow-x: auto; white-space: nowrap; }
 }
 
 /* Post / KB Card Item in List */
