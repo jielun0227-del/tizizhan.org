@@ -1,0 +1,41 @@
+name: Submit to IndexNow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'sitemap.xml'
+      - 'index.html'
+      - 'posts/**'
+      - 'kb/**'
+      - 'reviews/**'
+      - 'docs/**'
+  workflow_dispatch:
+
+jobs:
+  submit-indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Submit URLs to IndexNow & Bing
+        run: |
+          URLS=$(grep -o '<loc>[^<]*</loc>' sitemap.xml | sed -e 's/<loc>//' -e 's/<\/loc>//' | jq -R . | jq -s .)
+          PAYLOAD=$(jq -n \
+            --arg host "tizizhan.org" \
+            --arg key "2e1c04c14cf74e3a9bccebb2d22326fd" \
+            --arg keyLocation "https://tizizhan.org/2e1c04c14cf74e3a9bccebb2d22326fd.txt" \
+            --argjson urls "$URLS" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urls}')
+          
+          echo "Submitting to api.indexnow.org..."
+          curl -s -i -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$PAYLOAD"
+          
+          echo "Submitting to www.bing.com..."
+          curl -s -i -X POST "https://www.bing.com/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$PAYLOAD"
