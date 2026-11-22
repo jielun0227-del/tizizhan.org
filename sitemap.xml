@@ -106,8 +106,14 @@
   <!-- 科普文章 -->
   <url>
     <loc>https://tizizhan.org/posts/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tizizhan.org/posts/cheap-backup-airports.html</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
