@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clash Verge Rev 零基础实战配置教程：Meta/Mihomo 内核切换与 TUN 全局模式详解 | 梯子指南</title>
+  <meta name="description" content="本指南详述现代代理客户端Clash Verge Rev从安装到进阶调优全流程：图文解析订阅链接批量拉取、Meta与Mihomo内核一键切换、TUN虚拟网卡全局流量接管与规则分流防DNS泄漏技巧，手把手指导Windows与macOS用户快速搭建低延迟、高稳定且不卡顿的跨平台网络加速环境。">
+  <link rel="canonical" href="https://tizizhan.org/docs/tutorials/clash-verge-tutorial.html">
+  <meta name="keywords" content="Clash Verge教程, Clash Verge Rev, Mihomo内核, TUN模式, 翻墙客户端配置, Clash分流规则">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="brand-logo">
+        <div class="logo-text">
+          <span class="logo-title">梯子<span class="gradient-text">指南</span></span>
+          <span class="logo-subtitle">全平台客户端实战手册</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="../../index.html" class="nav-link">首页</a>
+        <a href="../../reviews/index.html" class="nav-link">机场评测</a>
+        <a href="../index.html" class="nav-link active">配置教程 & 知识库</a>
+        <a href="../../faq/index.html" class="nav-link">避坑 FAQ</a>
+        <a href="../../about/index.html" class="nav-link">关于我们</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container" style="padding: 40px 0;">
+    <article class="content-body" style="max-width: 900px; margin: 0 auto;">
+      <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-patina); margin-bottom:12px;">
+        <a href="../../index.html">HOME</a> / <a href="../index.html">DOCS</a> / <span>CLASH-VERGE-TUTORIAL</span>
+      </div>
+      <h1>Clash Verge Rev 零基础实战配置教程：Meta/Mihomo 内核与 TUN 虚拟网卡实战</h1>
+      <div style="display:flex; gap:16px; font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim); margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid var(--border-patina);">
+        <span>DATE: 2026-11-26</span>
+        <span>TAG: #ClashVerge #Mihomo #TUN模式</span>
+      </div>
+
+      <p class="article-lead">Clash Verge Rev 是当前 Windows、macOS 和 Linux 平台上最受欢迎的新一代现代化代理客户端之一。相比传统的 Clash for Windows，它原生集成了开源 Mihomo（Clash.Meta）内核，拥有更低的系统资源占用、更强大的协议支持（如 Hysteria2、VLESS）以及无缝的 TUN 虚拟网卡接管能力。</p>
+
+      <h2>一、 客户端正版下载与基础安装</h2>
+      <p>请前往官方开源 GitHub Release 页面获取对应操作系统的最新安装包：Windows 推荐选择 <code>.x64.exe</code> 安装包；macOS Apple Silicon 芯片（M1/M2/M3/M4）选择 <code>arm64.dmg</code>。</p>
+
+      <h2>二、 导入机场订阅与更新节点</h2>
+      <ol>
+        <li>从你所购买的机场后台复制 Clash / Clash.Meta 订阅链接。</li>
+        <li>打开 Clash Verge Rev，点击左侧菜单栏的 <strong>“订阅” (Profiles)</strong>。</li>
+        <li>在顶部输入框粘贴订阅地址，点击 <strong>“导入”</strong>，等待下载成功后选中该配置文件。</li>
+      </ol>
+
+      <h2>三、 开启 TUN 模式接管系统全局流量</h2>
+      <p>普通系统代理仅对支持系统代理解析的浏览器生效，命令行终端、开发工具（Git、Docker）以及部分客户端应用常常绕过代理。开启 TUN 虚拟网卡模式可以彻底接管底层所有 TCP/UDP 流量：</p>
+      <ul>
+        <li>点击左侧 <strong>“设置” (Settings)</strong> -> 找到 <strong>“TUN 模式”</strong> 开关并开启。</li>
+        <li>首次开启需点击“授予管理员权限”，系统会自动安装虚拟网卡驱动。</li>
+        <li>配合内置的智能分流规则（Rule Mode），实现国内流量直连、国外流量自动加速。</li>
+      </ul>
+
+      <h2>四、 故障排查与相关指南</h2>
+      <p>如果在配置过程中遇到节点全部超时或无法联网，请参考本站排查文档：<a href="../troubleshooting/node-timeout-fix.html">《节点全部超时与本地 DNS 污染排查全书》</a>。</p>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>© 2026 梯子指南. 客户端配置专栏.</div>
+      <a href="../index.html" style="color:var(--accent-verdigris);">返回文档知识库 →</a>
+    </div>
+  </footer>
+</body>
+</html>

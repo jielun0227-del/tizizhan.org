@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>梯子节点全部超时与连接失败排查全书：DNS污染、时间校准与订阅报错5步速修 | 梯子指南</title>
+  <meta name="description" content="本指南系统整理科学上网客户端节点全部超时、Ping通但无法打开外网及订阅刷新失败的5步实战排查方案：详尽剖析系统本地时间偏差导致TLS握手失败、DNS污染残留与虚拟网卡冲突根因，手把手指导用户快速定位网络故障并恢复正常跨境连接，解决各类翻墙连不上的疑难杂症。">
+  <link rel="canonical" href="https://tizizhan.org/docs/troubleshooting/node-timeout-fix.html">
+  <meta name="keywords" content="节点全部超时, 梯子连不上, Clash超时排错, DNS污染解决, 订阅更新失败, 小火箭超时">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="brand-logo">
+        <div class="logo-text">
+          <span class="logo-title">梯子<span class="gradient-text">指南</span></span>
+          <span class="logo-subtitle">连接故障排错手册</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="../../index.html" class="nav-link">首页</a>
+        <a href="../../reviews/index.html" class="nav-link">机场评测</a>
+        <a href="../index.html" class="nav-link active">配置教程 & 知识库</a>
+        <a href="../../faq/index.html" class="nav-link">避坑 FAQ</a>
+        <a href="../../about/index.html" class="nav-link">关于我们</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container" style="padding: 40px 0;">
+    <article class="content-body" style="max-width: 900px; margin: 0 auto;">
+      <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-patina); margin-bottom:12px;">
+        <a href="../../index.html">HOME</a> / <a href="../index.html">DOCS</a> / <span>NODE-TIMEOUT-FIX</span>
+      </div>
+      <h1>梯子节点全部超时与连接失败排查全书：5 步迅速恢复网络连接</h1>
+      <div style="display:flex; gap:16px; font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim); margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid var(--border-patina);">
+        <span>DATE: 2026-11-26</span>
+        <span>TAG: #故障排查 #节点超时 #DNS修复</span>
+      </div>
+
+      <p class="article-lead">许多用户在使用 Clash、Shadowrocket 或 v2rayN 时，常常遇到“刚导入的节点全部测速超时（Timeout）”、“虽然节点有延迟但网页完全打不开”或“订阅地址更新失败”的问题。本文总结了排查此类故障的 5 大核心步骤。</p>
+
+      <h2>步骤一：校准本地系统时间（最常见隐藏元凶）</h2>
+      <p>现代加密代理协议（如 VMess、VLESS、Trojan、Shadowsocks）都高度依赖严格的时间戳验证。<strong>一旦手机或电脑的系统时间与标准 UTC 时间偏差超过 90 秒，TLS/握手认证将全部被服务器直接丢弃</strong>，导致所有节点显示超时。进入系统“日期与时间设置”，关闭手动调时，开启“自动同步网络时间”即可解决。</p>
+
+      <h2>步骤二：检查并刷新机场订阅链接</h2>
+      <p>部分小作坊或公网中继节点会频繁更换入口解析域名。如果长时间未更新订阅，旧的 IP 和端口可能已失效。在客户端中右键点击订阅配置，选择“更新订阅”；若更新提示“Network Error”，请尝试在手机热点网络下更新，排除本地宽带运营商拦截。</p>
+
+      <h2>步骤三：清理本地残留 DNS 缓存与虚拟网卡冲突</h2>
+      <p>在 Windows 下，异常退出旧版代理工具可能导致系统代理开关未正常关闭，或 TUN 虚拟网卡未释放。以管理员身份打开 PowerShell，执行以下命令重置网络：</p>
+      <pre style="background:var(--bg-card); padding:12px; border-radius:6px; border:1px solid var(--border-patina);"><code>ipconfig /flushdns
+netsh winsock reset</code></pre>
+
+      <h2>步骤四：切换分流规则为“全局 (Global)”模式快速排查</h2>
+      <p>有时并非节点断连，而是分流规则文件（Rule Provider）损坏或规则将目标网站误判为直连导致打不开。临时将分流模式切换为“全局模式 (Global)”，如果此时能打开 Google，说明是规则分流问题，更新分流规则即可修复。</p>
+
+      <h2>步骤五：配置多线路备用容灾方案</h2>
+      <p>如果经过上述排查确定是服务商骨干网维护或突发断流，准备一条高质量的备用链路（如<a href="../../reviews/starlight-review.html">星尘轻量云</a>或<a href="../../reviews/kuaili-review.html">快狸 IEPL 专线</a>）能够让你在几秒内切线，彻底摆脱单点故障停摆。</p>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>© 2026 梯子指南. 故障排查专栏.</div>
+      <a href="../index.html" style="color:var(--accent-verdigris);">返回文档知识库 →</a>
+    </div>
+  </footer>
+</body>
+</html>

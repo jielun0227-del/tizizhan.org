@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星尘轻量云 (Starlight) 评测：0.45元/G永久按量流量包与轻量出海实测 | 梯子指南</title>
+  <meta name="description" content="本报告详测星尘轻量云（Starlight）按量付费与IEPL备用专线性能。实测三大运营商晚高峰骨干网丢包率、0.45元每GB永久有效流量包兑现情况与主流流媒体解锁表现，提供轻度浏览、差旅备用与多设备容灾搭配方案，是告别月度清零浪费的灵巧型高性价比备用机场推荐。">
+  <link rel="canonical" href="https://tizizhan.org/reviews/starlight-review.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "星尘轻量云 (Starlight) 按量专线",
+    "description": "0.45元/G永久按量流量包，不设到期时间，轻度用户与容灾备用首选",
+    "brand": { "@type": "Brand", "name": "Starlight" },
+    "review": {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5" },
+      "author": { "@type": "Organization", "name": "梯子指南" },
+      "datePublished": "2026-11-26",
+      "reviewBody": "星尘轻量云采用按量不限时计费机制，0.45元/G永久不过期，晚高峰丢包控制在0.3%左右，适合作为高可用备用节点。"
+    },
+    "offers": { "@type": "Offer", "price": "19.90", "priceCurrency": "CNY" }
+  }
+  </script>
+</head>
+<body>
+  <header class="observatory-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="observatory-logo">
+        <div class="logo-symbol">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path>
+          </svg>
+        </div>
+        <div class="logo-title-group">
+          <span class="logo-org-name">梯子指南</span>
+          <span class="logo-division">机场深度评测 · 2026 EDITION</span>
+        </div>
+      </a>
+      <nav class="observatory-nav">
+        <a href="../index.html" class="nav-item">推荐机场</a>
+        <a href="../kb/index.html" class="nav-item">知识库</a>
+        <a href="index.html" class="nav-item active">机场评测</a>
+        <a href="../faq/index.html" class="nav-item">机场FAQ</a>
+        <a href="../coupons/index.html" class="nav-item">优惠券</a>
+      </nav>
+      <div class="header-status-group">
+        <div class="system-status-indicator">
+          <span class="status-beacon"></span>
+          <span>SLA 99.82% OPERATIONAL</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 48px 0;">
+    <div class="mono-label">PEER AUDIT #2026-Q4 · UPDATED: 2026-11-26</div>
+    <h1>星尘轻量云（Starlight）：0.45元/G永久按量计费与IEPL备用专线实测报告</h1>
+    <p>星尘轻量云主打“按量付费、永久不过期”的轻量化运营模式，专门针对日常流量消耗较少、不愿每月承担几十元固定月费的轻度出海用户，以及需要准备第二条应急防失联链路的跨境外贸人员。本报告基于三大运营商多地探针连续 14 天监测数据，重点考察晚高峰丢包、节点连通率与按量扣费透明度。</p>
+
+    <div class="card-kv-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:16px; margin:24px 0;">
+      <div style="background:var(--bg-card); padding:16px; border:1px solid var(--border-patina); border-radius:6px;">
+        <span style="font-size:0.8rem; color:var(--text-dim);">网络架构</span>
+        <div style="font-size:1.1rem; font-weight:700; color:var(--accent-bronze); margin-top:4px;">IEPL 专线 + BGP 备用</div>
+      </div>
+      <div style="background:var(--bg-card); padding:16px; border:1px solid var(--border-patina); border-radius:6px;">
+        <span style="font-size:0.8rem; color:var(--text-dim);">流量单价</span>
+        <div style="font-size:1.1rem; font-weight:700; color:var(--accent-bronze); margin-top:4px;">¥0.45 / GB (永久有效)</div>
+      </div>
+      <div style="background:var(--bg-card); padding:16px; border:1px solid var(--border-patina); border-radius:6px;">
+        <span style="font-size:0.8rem; color:var(--text-dim);">晚高峰丢包</span>
+        <div style="font-size:1.1rem; font-weight:700; color:var(--accent-verdigris); margin-top:4px;">0.31% (优质)</div>
+      </div>
+      <div style="background:var(--bg-card); padding:16px; border:1px solid var(--border-patina); border-radius:6px;">
+        <span style="font-size:0.8rem; color:var(--text-dim);">综合评分</span>
+        <div style="font-size:1.1rem; font-weight:700; color:var(--accent-bronze); margin-top:4px;">4.5 / 5.0</div>
+      </div>
+    </div>
+
+    <h2>一、 产品定位与核心特性</h2>
+    <p>常规机场普遍采用“按月重置流量”的周期订阅模式，许多每月仅需 20G~30G 流量的轻度用户往往会浪费大半额度。星尘轻量云打破了这一限制：充值后的流量<strong>不设有效期、永久有效</strong>，直到用完为止。这一特性使其成为了作为主力机场“防失联备用方案”的理想之选。</p>
+
+    <h2>二、 晚高峰骨干网多地测速数据</h2>
+    <div class="data-table-container" style="margin:20px 0;">
+      <table class="observatory-table" style="width:100%; border-collapse:collapse; font-size:0.88rem;">
+        <thead>
+          <tr style="border-bottom:2px solid var(--border-bronze); text-align:left;">
+            <th style="padding:10px;">测试源入口</th>
+            <th style="padding:10px;">落地节点</th>
+            <th style="padding:10px;">网络延迟</th>
+            <th style="padding:10px;">峰值吞吐</th>
+            <th style="padding:10px;">丢包率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border-patina);">
+            <td style="padding:10px;">广州电信</td>
+            <td style="padding:10px;">香港 IEPL 专线</td>
+            <td style="padding:10px;">28 ms</td>
+            <td style="padding:10px;">520 Mbps</td>
+            <td style="padding:10px; color:var(--accent-verdigris);">0.18%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border-patina);">
+            <td style="padding:10px;">上海联通</td>
+            <td style="padding:10px;">日本 IEPL 专线</td>
+            <td style="padding:10px;">49 ms</td>
+            <td style="padding:10px;">480 Mbps</td>
+            <td style="padding:10px; color:var(--accent-verdigris);">0.25%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border-patina);">
+            <td style="padding:10px;">北京移动</td>
+            <td style="padding:10px;">新加坡 BGP 备用</td>
+            <td style="padding:10px;">78 ms</td>
+            <td style="padding:10px;">340 Mbps</td>
+            <td style="padding:10px;">0.42%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>三、 选购与搭配策略建议</h2>
+    <p>对于预算有限的学生党或追求稳定性的专业外贸用户，建议将星尘轻量云与常规专线主力（如<a href="kuaili-review.html">快狸 IEPL 专线</a>）组合搭配。日常高带宽刷视频走主力专线，在客户端（如 Clash Verge 或 Shadowrocket）策略组中将星尘轻量云设为自动容灾备用（Fallback），实现 365 天无感断网自愈。</p>
+
+    <div style="margin-top:36px; padding:20px; background:rgba(180,140,80,0.08); border-left:4px solid var(--accent-bronze); border-radius:4px;">
+      <h3 style="margin-top:0;">💡 测评总结</h3>
+      <p style="margin-bottom:0; font-size:0.9rem; line-height:1.7;">星尘轻量云不是追求极致大带宽的冲浪利器，但其“永久有效、按量计费、专线低延迟”的产品架构精准契合了备用容灾与轻度出海刚需，综合表现值得推荐。</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>© 2026 梯子指南. 机场客观评测专栏.</div>
+      <a href="index.html" style="color:var(--accent-verdigris);">返回评测汇总列表 →</a>
+    </div>
+  </footer>
+</body>
+</html>
