@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNS 泄漏与污染终极防御指南：DoH/DoT 加密配置与 Fake-IP/TUN 模式网络安全工程 | 梯子指南</title>
+  <meta name="description" content="深度剖析科学上网过程中的DNS泄漏与投毒污染隐患：全面对比传统UDP 53端口明文传输、DoH与DoT加密解析底层原理，深入拆解Clash Fake-IP虚拟映射与TUN全局流量接管机制。手把手指导全平台用户正确配置防泄漏分流规则与实测自检，彻底杜绝真实出海访问记录暴露，全面防御中间人劫持与风控封锁。">
+  <link rel="canonical" href="https://tizizhan.org/kb/dns-leak-protection.html">
+  <meta name="keywords" content="DNS泄漏, DNS污染, Fake-IP原理, DoH配置, Clash防DNS泄漏, 科学上网隐私安全">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <div class="container header-row">
+      <a href="../index.html" class="site-brand"><span class="brand-glyph">◈</span><span>梯子指南</span></a>
+      <nav class="site-nav">
+        <a href="../index.html#recommended" class="nav-link">推荐机场</a>
+        <a href="../ai-tools/index.html" class="nav-link">AI 软件</a>
+        <a href="index.html" class="nav-link active">知识库</a>
+        <a href="../posts/index.html" class="nav-link">科普文章</a>
+        <a href="../faq/index.html" class="nav-link">机场 FAQ</a>
+        <a href="../coupons/index.html" class="nav-link">机场优惠券</a>
+        <a href="../links/index.html" class="nav-link">友情链接</a>
+        <a href="../about/index.html" class="nav-link">关于我们</a>
+      </nav>
+      <div class="header-status-box"><span class="patina-dot"></span><span>网络隐私工程</span></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="article-two-cols">
+      
+      <!-- TOC Aside -->
+      <aside class="toc-aside">
+        <div class="toc-title">目录导航 // TOC</div>
+        <ul class="toc-list">
+          <li><a href="#what-is-leak">一、 什么是 DNS 泄漏？为什么极具危险？</a></li>
+          <li><a href="#defense-tech">二、 现代防泄漏三大核心防御技术</a></li>
+          <li><a href="#fake-ip-deep">三、 Fake-IP 虚拟映射机制深入拆解</a></li>
+          <li><a href="#doh-config">四、 DoH / DoT 加密 DNS 实操建议</a></li>
+          <li><a href="#check-leak">五、 本地防泄漏实测自检流程</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <article class="content-body">
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-patina); margin-bottom:12px;">
+          <a href="../index.html">HOME</a> / <a href="index.html">KB</a> / <span>DNS-LEAK-PROTECTION</span>
+        </div>
+        <h1>DNS 泄漏与污染终极防御指南：DoH/DoT 加密配置与 Fake-IP/TUN 模式网络安全工程</h1>
+        <div style="display:flex; gap:16px; flex-wrap:wrap; font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim); margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid var(--border-patina);">
+          <span>DATE: 2026-11-26</span>
+          <span>TAG: #DNS泄漏 #FakeIP #DoH #网络安全 #TUN模式</span>
+          <span>WORD COUNT: 约 1,280 字</span>
+        </div>
+
+        <p class="article-lead">
+          在科学上网与跨境隐私保护的实战中，许多用户存在一个认知误区：“只要客户端显示已连接，我所有的网络行为就完全隐秘了”。然而，<strong>DNS 请求泄漏（DNS Leak）</strong> 往往是导致真实访问轨迹暴露、被本地宽带运营商日志记录，甚至触发跨国核心业务（如 OpenAI ChatGPT、Netflix、银行出海网关）风控封控的罪魁祸首。
+        </p>
+
+        <h2 id="what-is-leak">一、 什么是 DNS 泄漏？为什么它极具危险？</h2>
+        <p>
+          当你在浏览器中输入一个域名时，操作系统必须先向 DNS 服务器发起查询，将其转换为具体的服务器 IP 地址：
+        </p>
+        <ul>
+          <li><strong>理想的安全状态：</strong> 所有的 DNS 查询都被封装在代理客户端的 TLS 加密隧道内部，直接传输到海外专线落地服务器进行代为解析。</li>
+          <li><strong>发生泄漏的状态：</strong> 客户端在配置不当或仅开启普通系统代理时，操作系统依然直接使用明文（传统 UDP 53 端口）向你所在的本地运营商（如本地电信/联通/移动）发送了该域名的解析请求。</li>
+        </ul>
+        <p>
+          一旦发生泄漏，即便后续传输的内容经过了高强度加密，你访问了哪些网站、几点几分访问的，都会被本地运营商一清二楚地记录在审计日志中。
+        </p>
+
+        <h2 id="defense-tech">二、 现代防泄漏三大核心防御技术</h2>
+        <p>
+          针对明文 DNS 的脆弱性，现代代理生态发展出了三大核心防御工程：
+        </p>
+        <ol>
+          <li><strong>Fake-IP 虚拟 IP 映射机制：</strong> 彻底消除本地解析，从源头消灭 DNS 查询请求。</li>
+          <li><strong>DNS-over-HTTPS (DoH) / DoT：</strong> 针对国内直连流量，将明文查询伪装在标准的 443 端口 TLS 流量中，免疫任何中间人监听与投毒。</li>
+          <li><strong>TUN 虚拟网卡模式：</strong> 从操作系统驱动层捕获所有非 TCP 协议（包括各类应用的盲跑 DNS），杜绝漏网之鱼。</li>
+        </ol>
+
+        <h2 id="fake-ip-deep">三、 Fake-IP 虚拟映射机制深入拆解</h2>
+        <p>
+          在 Clash / Mihomo 体系中，<code>fake-ip</code> 已经成为行业事实标准：
+        </p>
+        <p>
+          当操作系统向客户端请求解析 <code>example.com</code> 时，内核并不去向任何外部 DNS 服务器查询，而是直接从内网预留网段（如 <code>198.18.0.1/16</code>）随机分配一个临时 Fake-IP 返回给操作系统。操作系统立刻发起对该 IP 的 TCP 连接；此时客户端截获数据包，在内存字典中查出对应的真实域名，直接将域名交给海外专线节点建立远程连接。
+        </p>
+        <p>
+          这种设计使得本地网络完全不产生任何向外的真实 DNS 数据包，彻底绝杀了 DNS 泄漏的可能。
+        </p>
+
+        <h2 id="doh-config">四、 DoH / DoT 加密 DNS 实操建议</h2>
+        <p>
+          为了保证国内直连流量的高速解析与防污染，建议在客户端配置中加入以下权威 DoH 节点：
+        </p>
+        <ul>
+          <li>国内分流推荐：<code>https://223.5.5.5/dns-query</code>（阿里云公共 DoH，全国多节点智能解析）</li>
+          <li>国外备用推荐：<code>https://1.1.1.1/dns-query</code>（Cloudflare 隐私安全 DoH）</li>
+        </ul>
+
+        <h2 id="check-leak">五、 本地防泄漏实测自检流程</h2>
+        <p>
+          想要验证自己的梯子是否存在泄漏，可按以下 3 步排查：
+        </p>
+        <ol>
+          <li>保持代理开启，在浏览器中打开国际知名检测站：<code>https://browserleaks.com/dns</code>。</li>
+          <li>运行 <strong>Extended DNS Leak Test</strong>。</li>
+          <li>查看检测出的 DNS 服务器列表：若只有 Cloudflare、Google 或节点所在地机房，说明防护严密；<strong>若出现中国大陆本地电信/联通/移动的 DNS 服务器，说明存在严重泄漏</strong>，请检查是否已开启 TUN 模式或切换为 Fake-IP 模式。</li>
+        </ol>
+
+        <div class="internal-recommend-slot">
+          <div class="slot-text-group">
+            <div class="slot-heading">🛡️ 搭配高品质企业级专线，享受原生住宅 IP</div>
+            <div class="slot-desc">本站推荐的主流专线均标配纯净住宅 IP 与防封控架构，从底层保障隐私安全。</div>
+          </div>
+          <a href="../index.html#recommended" class="btn-ancient btn-primary-bronze">
+            查看本站精选稳定专线机场 →
+          </a>
+        </div>
+
+        <h2>相关推荐阅读</h2>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px; font-size:0.9rem;">
+          <li>📖 <a href="airport-audit-privacy.html" style="color:var(--accent-verdigris);">推荐阅读：机场审计与日志是什么？“无审计机场”的隐私边界与安全核验 →</a></li>
+          <li>📖 <a href="../docs/tutorials/clash-verge-tutorial.html" style="color:var(--accent-verdigris);">实战教程：Clash Verge Rev 零基础实战与 TUN 模式详解 →</a></li>
+          <li>📖 <a href="../posts/clash-verge-vs-singbox-vs-surge.html" style="color:var(--accent-verdigris);">横向测评：2026 主流科学上网客户端大比拼（Clash vs Sing-box vs Surge） →</a></li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>© 2026 梯子指南. 网络隐私工程知识库专栏.</div>
+      <a href="../index.html#recommended" style="color:var(--accent-verdigris);">精选稳定专线推荐 →</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

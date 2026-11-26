@@ -329,4 +329,25 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- 友情链接页面 -->
+  <url>
+    <loc>https://tizizhan.org/links/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- 客户端大比拼长文 -->
+  <url>
+    <loc>https://tizizhan.org/posts/clash-verge-vs-singbox-vs-surge.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- DNS 防泄漏防护指南 -->
+  <url>
+    <loc>https://tizizhan.org/kb/dns-leak-protection.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
